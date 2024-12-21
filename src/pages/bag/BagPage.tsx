@@ -5,7 +5,7 @@ const Bag = () => {
     return (
         <div>
             <h1 className="text-4xl font-bold text-center uppercase py-4">Our bag collections</h1>
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4  gap-5">
                 {
                     bags.map(bag => <BagCard key={bag.id} bag={bag} />)
                 }
