@@ -18,8 +18,8 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} /> {/* Default child route */}
-          <Route path="bag" element={<Bag />} />
+          <Route element={<Home />} /> {/* Default child route */}
+          <Route index path="bag" element={<Bag />} />
           <Route path="fashion" element={<Fashion />} />
           <Route path="food" element={<Food />} />
           <Route path="agro" element={<Agro />} />
