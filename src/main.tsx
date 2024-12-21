@@ -5,7 +5,6 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Bag from './pages/bag/BagPage.tsx'
 import MainLayout from './layouts/MainLayout.tsx'
-import Home from './pages/Home.tsx'
 import About from './pages/About.tsx'
 import Fashion from './pages/fashion/Fashion.tsx'
 import Food from './pages/food/Food.tsx'
@@ -18,8 +17,8 @@ createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route element={<Home />} /> {/* Default child route */}
-          <Route index path="bag" element={<Bag />} />
+          <Route index element={<Bag />} /> {/* Default child route */}
+          <Route path="bag" element={<Bag />} />
           <Route path="fashion" element={<Fashion />} />
           <Route path="food" element={<Food />} />
           <Route path="agro" element={<Agro />} />
