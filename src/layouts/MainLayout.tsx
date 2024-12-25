@@ -1,11 +1,27 @@
 import { Outlet } from "react-router";
 import Navbar from "../components/Navbar";
+import Footer from "../pages/Footer";
+import { FaWhatsappSquare } from "react-icons/fa";
 
 const MainLayout = () => {
+    const phoneNumber = "8801855935377"
+    const message = "Hello, I would like to our products."
+
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     return (
-        <div>
+        <div className="max-w-[1550px] mx-auto px-2">
             <Navbar />
             <Outlet />
+            <div >
+                <a
+                    href={whatsappLink}
+                    target="_blank"
+
+                >
+                    <p className="text-green-700 fixed bottom-4 right-4 text-[60px] "><FaWhatsappSquare /></p>
+                </a>
+            </div>
+            <Footer />
         </div>
     );
 };
