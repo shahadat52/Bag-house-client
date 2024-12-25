@@ -2,6 +2,26 @@ import { NavLink } from "react-router";
 import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
+    const navItems = [
+        <li className="mr-8 text-lg" >
+            <NavLink to={`/`}>HOME</NavLink>
+        </li>,
+        <li className="mr-8 text-lg" >
+            <NavLink to={`/bag`}>BAG</NavLink>
+        </li>,
+        <li className="mr-8 text-lg" >
+            <NavLink to={`/fashion`}>FASHION</NavLink>
+        </li>,
+        <li className="mr-8 text-lg" >
+            <NavLink to={`/agro`}>AGRO</NavLink>
+        </li>,
+        <li className="mr-8 text-lg" >
+            <NavLink to={`/food`}>FOOD</NavLink>
+        </li>,
+        <li className="mr-8 text-lg" >
+            <NavLink to={`/about`}>ABOUT</NavLink>
+        </li>
+    ]
     return (
         <div className="">
             <div className="navbar bg-gray-300">
@@ -24,24 +44,7 @@ const Navbar = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li>
-                                <NavLink to={`/`}>HOME</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={`/bag`}>BAG</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={`/fashion`}>FASHION</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={`/agro`}>AGRO</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={`/food`}>FOOD</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={`/about`}>ABOUT</NavLink>
-                            </li>
+                            {navItems}
                         </ul>
                     </div>
                     <a className="flex  items-center text-lg text-">
@@ -50,25 +53,8 @@ const Navbar = () => {
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 font-semibold">
-                        <li>
-                            <NavLink to={`/`}>HOME</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={`/bag`}>BAG</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={`/fashion`}>FASHION</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={`/agro`}>AGRO</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={`/food`}>FOOD</NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={`/about`}>ABOUT</NavLink>
-                        </li>
+                    <ul className="mx-5 w-full menu menu-horizontal px-1 font-semibold ">
+                        {navItems}  {/*  Navbar items */}
                     </ul>
                 </div>
                 <div className="navbar-end">

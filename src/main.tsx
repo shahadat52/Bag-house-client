@@ -11,6 +11,8 @@ import Food from './pages/food/Food.tsx'
 import Agro from './pages/agro/Agro.tsx'
 import Login from './pages/Login.tsx'
 import Cart from './pages/cart/Cart.tsx'
+import BagDetails from './pages/bag/BagDetails.tsx'
+import NotFound from './pages/NotFound.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -19,11 +21,13 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Bag />} /> {/* Default child route */}
           <Route path="bag" element={<Bag />} />
+          <Route path="/bag/:id" element={<BagDetails />} />
           <Route path="fashion" element={<Fashion />} />
           <Route path="food" element={<Food />} />
           <Route path="agro" element={<Agro />} />
           <Route path="cart" element={<Cart />} />
           <Route path="about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
         <Route path="login" element={<Login />} />
       </Routes>
