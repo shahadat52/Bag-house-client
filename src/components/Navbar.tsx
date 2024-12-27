@@ -4,22 +4,25 @@ import { FaShoppingCart } from "react-icons/fa";
 const Navbar = () => {
     const navItems = [
         <li className="mr-8 text-lg" >
-            <NavLink to={`/`}>HOME</NavLink>
+            <NavLink to={`/`}>হোম</NavLink>
         </li>,
         <li className="mr-8 text-lg" >
-            <NavLink to={`/bag`}>BAG</NavLink>
+            <NavLink to={`/bag`}>ব্যাগ</NavLink>
         </li>,
         <li className="mr-8 text-lg" >
-            <NavLink to={`/fashion`}>FASHION</NavLink>
+            <NavLink to={`/fashion`}>ফ্যাশন</NavLink>
         </li>,
         <li className="mr-8 text-lg" >
-            <NavLink to={`/agro`}>AGRO</NavLink>
+            <NavLink to={`/agro`}>এগ্রো</NavLink>
         </li>,
         <li className="mr-8 text-lg" >
-            <NavLink to={`/food`}>FOOD</NavLink>
+            <NavLink to={`/food`}>ফুড</NavLink>
         </li>,
         <li className="mr-8 text-lg" >
-            <NavLink to={`/about`}>ABOUT</NavLink>
+            <NavLink to={`/about`}>আমাদের সম্পর্কে</NavLink>
+        </li>,
+        <li className="mr-8 text-lg" >
+            <NavLink to={`/about`}>রিভিউ</NavLink>
         </li>
     ]
     return (
