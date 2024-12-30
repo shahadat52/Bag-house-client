@@ -3,7 +3,7 @@ import { NavLink } from "react-router";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const BagCard = ({ bag }: any) => {
-    const bagId = bag?.id
+    const bagId = bag?._id
     return (
         <NavLink to={`/bag/:${bagId}`} className="bg-white shadow-xl hover:rounded-lg hover:shadow-2xl p-4 hover:border-2 hover:border-primary ">
 

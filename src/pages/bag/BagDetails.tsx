@@ -3,7 +3,7 @@ const BagDetails = () => {
     return (
         <div>
             <h1 className="text-2xl font-bold mt-10 mb-6">প্লাস্টিক বেতের ঝুড়ি ব্যাগ</h1>
-            <div className="grid grid-cols-2  ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                 <div className="col-span-1 mx-auto">
                     <img
                         src="/mony.png"

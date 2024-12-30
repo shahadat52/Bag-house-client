@@ -3,7 +3,7 @@ const Footer = () => {
     return (
         <>
             <div className="mt-5 bg-gray-400 h-[0.8px]"> </div>
-            <footer className=" grid grid-cols-2 gap-5 bg-white  p-10 ">
+            <footer className=" grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-5 bg-white  p-10 ">
 
                 <aside className="px-3">
 
@@ -15,7 +15,7 @@ const Footer = () => {
                         VinnotaBD Group
                         <br />
                         <span className="text-[15px]">
-                            ভিন্নতা বিডি, আমরা আপনার চাহিদার মানসম্পন্ন নিরাপদ,আকর্ষনীয় পণ্যগুলির একটি বৈচিত্র্যময় পরিসীমা সরবরাহ করতে পেরে গর্বিত, যা আপনার খাদ্যের নিরাপত্তা ও ফ্যাশনে, অবদান রাখে। নতুনত্বের ভিন্নতা Vinnotabd.com দিতে পারবো বলে বিশ্বাস করি।
+                            ভিন্নতা বিডি—আপনার আস্থার নাম। আমরা মানসম্মত, নিরাপদ, এবং আকর্ষণীয় পণ্যের বৈচিত্র্যময় পরিসর সরবরাহ করতে পেরে আনন্দিত। আমাদের পণ্যগুলো আপনার খাদ্য নিরাপত্তা এবং ফ্যাশনে নতুন মাত্রা যোগ করতে প্রতিশ্রুতিবদ্ধ। নতুনত্বের প্রতিশ্রুতি নিয়ে <a href="https://vinnota.netlify.app/">Vinnotabd.com</a>-এর মাধ্যমে আপনাকে সেরা সেবা দিতে আমরা আত্মবিশ্বাসী।
                         </span>
                     </p>
                 </aside>
@@ -29,8 +29,8 @@ const Footer = () => {
                         </div>
                         <div>
                             <h6 className="text-[15px] font-semibold uppercase mb-8 mt-2">Quick help</h6>
-                            <p className="mb-3">01812345678</p>
-                            <p className="mb-3">01812345677</p>
+                            <p className="mb-3">01737029330</p>
+                            <p className="mb-3">01866168264</p>
                         </div>
                     </div>
                 </div>

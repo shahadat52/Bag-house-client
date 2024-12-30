@@ -34,7 +34,7 @@ export const bags: TBag[] = [
         "img": "https://i.ibb.co/2g4r2BX/5.png",
         "name": "Crossbody Bag",
         "description": "Chic crossbody bag for everyday essentials.",
-        "price": 45.00
+        "price": 45.00,
     },
     {
         "id": "6",
