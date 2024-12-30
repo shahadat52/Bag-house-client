@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Skeleton from "../../components/Skeleton";
-import { bags } from "../../data/bag";
 import { useGetProductsQuery } from "../../redux/features/products/productsApi";
 import BagCard from "./BagCard";
 
