@@ -52,7 +52,7 @@ const Navbar = () => {
                     </div>
                     <a className="flex  items-center text-lg text-">
                         <img src="/logo.png" className='w-12 h-12 rounded-xl ' alt="Logo" />
-                        <span className="uppercase font-semibold"> Vinnota </span>
+                        <span className=" font-semibold"> VinnotaBD </span>
                     </a>
                 </div>
                 <div className="navbar-center hidden lg:flex">

@@ -13,7 +13,7 @@ const BagDetails = () => {
     }
     return (
         <div className="">
-            <h1 className="text-2xl font-bold mt-10 mb-6">{bag?.name}</h1>
+            {/* <h1 className="text-2xl font-bold mt-10 mb-6">{bag?.name}</h1> */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                 <div className="col-span-1 mx-auto">
                     <img
@@ -33,12 +33,12 @@ const BagDetails = () => {
                         ✅ আপনার পছন্দের রুচিশীল মানসম্মত পন্যের নিশ্চয়তা।
 
                     </p>
-                    <p className="text-xl font-medium mt-3">
+                    <p className="text-xl font-medium mt-3 mb-10">
                         * Dimensions: {bag?.size}
                     </p>
 
-                    <NavLink to={`/checkout/${id}`} className="mt-5 ">
-                        <button className="btn bg-black hover:bg-white hover:text-black hover:rounded text-white rounded-none w-full">এখনই কিনুন</button>
+                    <NavLink to={`/checkout/${id}`} className="mb-[-50px]">
+                        <button className="btn bg-black hover:bg-white hover:text-black hover:rounded text-white rounded-none w-full">অর্ডার করুন</button>
                     </NavLink>
                 </div>
             </div>

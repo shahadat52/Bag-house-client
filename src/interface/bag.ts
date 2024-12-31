@@ -5,3 +5,4 @@ export type TBag = {
     name: string;
     price: number
 }
+
