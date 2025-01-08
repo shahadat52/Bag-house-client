@@ -1,0 +1,45 @@
+[
+  {
+    "_id": {
+      "$oid": "676fd0de131872623b4539a7"
+    },
+    "name": "হ্যান্ড ব্যাগ",
+    "images": [
+      "https://i.ibb.co/w4ZXQ2z/1.png"
+    ],
+    "zoomImg": "https://i.ibb.co/w4ZXQ2z/1.png",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 540,
+    "offerPrice": 490,
+    "size": "লম্বা ১৪\" পাশে ১৪\"",
+    "category": "bag",
+    "subCategory": "প্লাস্টিকের বেতের ব্যাগ",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "677805fbcf0f56d2eaf142b9"
+    },
+    "name": "ঝুড়ি ব্যাগ",
+    "images": [
+      "https://i.ibb.co/xsJH8Qn/Juri-bag.png",
+      "https://i.ibb.co/C1HN7f9/juri-1.png",
+      "https://i.ibb.co/MGg0tkk/juri-2.png",
+      "https://i.ibb.co/vs3H1mX/juri-3.png",
+      "https: //i.ibb.co/J7tZgXQ/juri-4.png",
+      "https: //i.ibb.co/jMxGbDs/juri-6.png",
+      "https: //i.ibb.co/KNW7KdY/juri-8.png",
+      "https: //i.ibb.co/xKvxW02/juri-9.png",
+      "https: //i.ibb.co/WsTr0jM/juri-10.png"
+    ],
+    "zoomImg": "https://i.ibb.co/xsJH8Qn/Juri-bag.png",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 700,
+    "size": "দৈর্ঘ্য ১৫ প্রস্থ ১৫",
+    "category": "bag",
+    "subCategory": "প্লাস্টিকের বেতের ব্যাগ",
+    "ratings": 4.5,
+    "__v": 0
+  }
+]

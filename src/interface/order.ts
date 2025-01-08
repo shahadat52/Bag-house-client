@@ -8,5 +8,11 @@ export type TOrder = {
     status: 'pending' | 'completed' | 'cancelled';
     totalAmount: number;
     phone: string;
-    shippingAddress?: object
+    shippingAddress?:
+    {
+
+        address: string;
+
+    }
+
 }

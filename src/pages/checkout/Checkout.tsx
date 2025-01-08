@@ -5,6 +5,7 @@ import Skeleton from "../../components/Skeleton";
 import { useState } from "react";
 import { generateOrderId } from "../../utils/orderIdGenarator";
 import { useOrderPlaceMutation } from "../../redux/features/order/orderApi";
+import { useAppSelector } from "../../redux/hooks";
 
 export type TShippingAddress = {
 
@@ -18,6 +19,7 @@ type IFormInput = {
     phone: string;
     orderId: string;
     quantity: number;
+    deliveryCharge?: number;
     orderDate: string;
     status: string;
     totalAmount: number;
@@ -27,18 +29,32 @@ type IFormInput = {
 const Checkout = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormInput>();
     const [quantity, setQuantity] = useState(1);
+    // const [deliveryCharge, setDeliveryCharge] = useState(70);
+    const image = useAppSelector(state => state.products.products)
+
+
     const [orderPlace] = useOrderPlaceMutation();
     const { id } = useParams();;
 
-    const orderId = generateOrderId();
 
+    const [deliveryCharge, setDeliveryCharge] = useState<number>(70);
+
+    const handleCheck = (value: number) => {
+        setDeliveryCharge(value);
+    };
+
+
+    const orderId = generateOrderId();
+    console.log(deliveryCharge);
     const { data, isLoading } = useGetSingleProductQuery(id as string);
     const bag = data?.data;
     if (isLoading) {
         return <Skeleton />
     }
 
-    const total = ((bag?.price * Number(quantity)) + 120).toFixed(2);
+    const offerPrice = bag?.price - (bag?.price * 0.10)
+
+    const total = ((offerPrice * Number(quantity)) + (deliveryCharge ?? 0)).toFixed(1);
 
 
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
@@ -51,11 +67,13 @@ const Checkout = () => {
             orderId,
             customerName: data.customerName,
             orderProducts: bag?._id,
+            selectedProductImage: image,
             quantity: Number(data.quantity),
             totalAmount: total,
             phone: data.phone,
             shippingAddress: shippingAddress
         }
+        console.log(orderData);
         const result = await orderPlace(orderData);
         console.log(result);
         if (result?.data) {
@@ -71,18 +89,43 @@ const Checkout = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 mt-5 text-gray-500">
                 <div>
                     <div className="flex mx-auto justify-between items-center border border-r-slate-300 h-24 w-[95%] px-2 rounded mt-4">
-                        <img src={bag?.img} alt="" className="h-[80px]" />
+                        <img src={image} alt="" className="h-[80px]" />
                         <h3 className="font-semibold">{bag?.name}</h3>
                         <h3>Size: {bag?.size}</h3>
-                        <h3 className="font-bold" >{(bag?.price * quantity).toFixed(1)}tk</h3>
+                        <h3 className="font-bold" >{(offerPrice ?? 0).toFixed(1)}tk</h3>
                     </div>
                     <div className="mx-4 mt-4 font-bold ">
                         <div className="flex justify-between mb-5 ">
-                            <h5 className="font-semibold">মোট</h5>  <h5 className="font-bold">{(bag?.price * quantity).toFixed(1)} tk</h5>
+                            <h5 className="font-semibold">মোট</h5>  <h5 className="font-bold">{(offerPrice * quantity).toFixed(1)} tk</h5>
+                        </div>
+                        <div className="flex flex-col items-start gap-4 p-4">
+                            <div className="mt-1">
+                                <p className="text-gray-700">
+                                    ডেলিভারি চার্জ: <span className="font-bold">{deliveryCharge ?? "None"}</span>
+                                </p>
+                            </div>
+                            <label className="flex items-center gap-2">
+                                <input
+                                    type="checkbox"
+                                    checked={deliveryCharge === 70}
+                                    onChange={() => handleCheck(70)}
+                                    className="form-checkbox h-5 w-5 text-blue-500"
+                                />
+                                ঢাকার ভিতরে (70)
+                            </label>
+
+                            <label className="flex items-center gap-2">
+                                <input
+                                    type="checkbox"
+                                    checked={deliveryCharge === 110}
+                                    onChange={() => handleCheck(110)}
+                                    className="form-checkbox h-5 w-5 text-green-500"
+                                />
+                                ঢাকার বাহিরে (110)
+                            </label>
                         </div>
 
-                        <div className="flex justify-between mb-10">
-                            <h5>ডেলিভারি চার্জ</h5> <h5>120 tk</h5>
+                        <div className="flex flex-col justify-between mb-10">
                         </div>
                         <hr /><hr />
                         <div className="flex justify-between">

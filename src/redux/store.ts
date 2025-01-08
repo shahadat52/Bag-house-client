@@ -1,10 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import authReducer from './features/auth/authSlice'
-// import serviceReducer from './features/service/serviceSlice'
+import productsReducer from './features/products/productsSlice'
 // import bookingReducer from './features/booking/bookingSlice'
 import { baseApi } from './api/baseApi'
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+// import { productsSlice } from './features/products/productsSlice'
 const persistConfig = {
     key: 'auth',
     storage,
@@ -15,8 +16,7 @@ export const store = configureStore({
     reducer: {
         [baseApi.reducerPath]: baseApi.reducer,
         auth: persistedReducer,
-        // services: serviceReducer,
-        // booking: bookingReducer
+        products: productsReducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
