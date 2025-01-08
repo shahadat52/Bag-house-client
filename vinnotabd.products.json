@@ -3,15 +3,24 @@
     "_id": {
       "$oid": "676fd0de131872623b4539a7"
     },
-    "name": "হ্যান্ড ব্যাগ",
+    "name": "হ্যান্ড ব্যাগ ১৪ ইঞ্চি",
     "images": [
-      "https://i.ibb.co/w4ZXQ2z/1.png"
+      "https://i.ibb.co/w4ZXQ2z/1.png",
+      "https://i.ibb.co.com/Ld4GG14/14-14-1.png",
+      "https://i.ibb.co.com/crGz5D0/14-14-2.png",
+      "https://i.ibb.co.com/tXy5hW7/14-14-3.png",
+      "https://i.ibb.co.com/R3PNFg9/14-14-4.png",
+      "https://i.ibb.co.com/y84x5VJ/14-14-5.png",
+      "https://i.ibb.co.com/j6VNCxn/14-14-6.png",
+      "https://i.ibb.co.com/F7ym4fX/14-14-7.png",
+      "https://i.ibb.co.com/r7VPKVr/14-14-8.png",
+      "https://i.ibb.co.com/3BFmdqn/14-14-9.png"
     ],
     "zoomImg": "https://i.ibb.co/w4ZXQ2z/1.png",
     "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
     "price": 540,
     "offerPrice": 490,
-    "size": "লম্বা ১৪\" পাশে ১৪\"",
+    "size": "দৈর্ঘ্য ১৪ প্রস্থ ১৪",
     "category": "bag",
     "subCategory": "প্লাস্টিকের বেতের ব্যাগ",
     "ratings": 4.5,
@@ -27,11 +36,11 @@
       "https://i.ibb.co/C1HN7f9/juri-1.png",
       "https://i.ibb.co/MGg0tkk/juri-2.png",
       "https://i.ibb.co/vs3H1mX/juri-3.png",
-      "https: //i.ibb.co/J7tZgXQ/juri-4.png",
-      "https: //i.ibb.co/jMxGbDs/juri-6.png",
-      "https: //i.ibb.co/KNW7KdY/juri-8.png",
-      "https: //i.ibb.co/xKvxW02/juri-9.png",
-      "https: //i.ibb.co/WsTr0jM/juri-10.png"
+      "https://i.ibb.co/J7tZgXQ/juri-4.png",
+      "https://i.ibb.co/jMxGbDs/juri-6.png",
+      "https://i.ibb.co/KNW7KdY/juri-8.png",
+      "https://i.ibb.co/xKvxW02/juri-9.png",
+      "https://i.ibb.co/WsTr0jM/juri-10.png"
     ],
     "zoomImg": "https://i.ibb.co/xsJH8Qn/Juri-bag.png",
     "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",

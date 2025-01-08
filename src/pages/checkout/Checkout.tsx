@@ -6,6 +6,7 @@ import { useState } from "react";
 import { generateOrderId } from "../../utils/orderIdGenarator";
 import { useOrderPlaceMutation } from "../../redux/features/order/orderApi";
 import { useAppSelector } from "../../redux/hooks";
+import Loading from "../../components/Loading";
 
 export type TShippingAddress = {
 
@@ -29,6 +30,7 @@ type IFormInput = {
 const Checkout = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormInput>();
     const [quantity, setQuantity] = useState(1);
+    const [loading, setLoading] = useState(false);
     // const [deliveryCharge, setDeliveryCharge] = useState(70);
     const image = useAppSelector(state => state.products.products)
 
@@ -58,6 +60,7 @@ const Checkout = () => {
 
 
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+        setLoading(true);
         const shippingAddress: TShippingAddress = {
             district: data.shippingAddress.district,
             subDistrict: data.shippingAddress.subDistrict,
@@ -67,7 +70,7 @@ const Checkout = () => {
             orderId,
             customerName: data.customerName,
             orderProducts: bag?._id,
-            selectedProductImage: image,
+            image,
             quantity: Number(data.quantity),
             totalAmount: total,
             phone: data.phone,
@@ -75,10 +78,14 @@ const Checkout = () => {
         }
         console.log(orderData);
         const result = await orderPlace(orderData);
-        console.log(result);
         if (result?.data) {
             reset()
+            setLoading(false);
             alert("Order placed successfully")
+        }
+        if (result.error) {
+            setLoading(false);
+            alert("Order failed")
         }
     }
     return (
@@ -229,9 +236,11 @@ const Checkout = () => {
 
                     </div>
 
-                    <div className="mt-5 flex justify-center" >
-                        <input type="submit" value="অর্ডার সম্পন্ন করুন " className="border text-gray-800 border-black hover:bg-white w-1/3 p-2 bg-primary rounded" />
-                    </div>
+                    {
+                        loading ? <Loading /> : <div className="mt-5 flex justify-center" >
+                            <input type="submit" value="অর্ডার সম্পন্ন করুন " className="border text-gray-800 border-black hover:bg-white w-1/3 p-2 bg-primary rounded" />
+                        </div>
+                    }
                 </form>
                 <div>
 

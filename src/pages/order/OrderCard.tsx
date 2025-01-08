@@ -17,6 +17,7 @@ const OrderCard = ({ order, index }: OrderCardProps & { index: number }) => {
             <th>{order?.shippingAddress?.address}</th>
             <td> {order.phone}</td>
             <td> {order.orderProducts.map((product: TProduct) => product.name)}</td>
+            <td> <img src={order.image} className="h-12 w-10" alt="" /></td>
             <td> {order.quantity}</td>
             <td> {order.totalAmount}</td>
         </tr>

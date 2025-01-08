@@ -27,6 +27,7 @@ const OrdersPage = () => {
                             <th>Address</th>
                             <th>phone</th>
                             <th>Product</th>
+                            <th>image</th>
                             <th>quantity</th>
                             <th>price</th>
 

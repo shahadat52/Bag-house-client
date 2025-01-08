@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useEffect } from 'react';
 import InnerImageZoom from 'react-inner-image-zoom';
 import { useAppDispatch } from '../redux/hooks';
 import { selectedProduct } from '../redux/features/products/productsSlice';
 
 interface ImageCardProps {
     images: string[];
+    selectedImage: any;
+    setSelectedImage: (image: string) => void;
 }
 
-const ImageCard: React.FC<ImageCardProps> = ({ images }) => {
+const ImageCard: React.FC<ImageCardProps> = ({ images, selectedImage, setSelectedImage }) => {
     const dispatch = useAppDispatch();
-    const [selectedImage, setSelectedImage] = useState(images[0]);
     const leftImages = images.slice(0, 5);
     const rightImages = images.slice(5);
 
@@ -27,7 +29,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ images }) => {
                             key={index}
                             src={image}
                             alt={`Left Thumbnail ${index + 1}`}
-                            className={`w-16 h-16 sm:w-20 sm:h-20 object-cover cursor-pointer rounded-md border ${selectedImage === image ? "border-blue-500" : "border-gray-300"
+                            className={`w-28 h-32   object-cover cursor-pointer rounded-md border ${selectedImage === image ? "border-blue-500" : "border-gray-300"
                                 }`}
                             onClick={() => setSelectedImage(image)}
                         />
@@ -36,7 +38,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ images }) => {
 
                 {/* Main Image */}
                 <div className="flex justify-center items-center">
-                    <InnerImageZoom src={selectedImage} zoomSrc={selectedImage} className="w-[80%] rounded-md mx-auto" /> :
+                    <InnerImageZoom src={selectedImage} zoomSrc={selectedImage} className="w-[100%] rounded-md mx-auto" /> :
                 </div>
 
                 {/* Right Side Thumbnails */}
@@ -46,7 +48,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ images }) => {
                             key={index}
                             src={image}
                             alt={`Right Thumbnail ${index + 1}`}
-                            className={`w-16 h-16 sm:w-20 sm:h-20 object-cover cursor-pointer rounded-md border ${selectedImage === image ? "border-blue-500" : "border-gray-300"
+                            className={`w-28 h-32  object-cover cursor-pointer rounded-md border ${selectedImage === image ? "border-blue-500" : "border-gray-300"
                                 }`}
                             onClick={() => setSelectedImage(image)}
                         />

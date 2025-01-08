@@ -5,6 +5,7 @@ import Skeleton from "../../components/Skeleton";
 import Loading from "../../components/Loading";
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css';
 import ImageCard from "../../components/ImageCard";
+import { useEffect, useState } from "react";
 
 const BagDetails = () => {
     const { id } = useParams();;
@@ -12,12 +13,20 @@ const BagDetails = () => {
     const { data, isLoading } = useGetSingleProductQuery(id as string);
     const { data: relatedData, isLoading: relatedLoading } = useGetProductsQuery({ category: "bag" });
     const bag = data?.data;
-
     const relatedBags = relatedData?.data;
+
+    const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
+    useEffect(() => {
+        if (bag?.images) {
+            setSelectedImage(bag.images[0]);
+        }
+    }, [bag]);
 
     if (isLoading) {
         return <Skeleton />
     }
+
+
     return (
         <div className="">
             {/* <h1 className="text-2xl font-bold mt-10 mb-6">{bag?.name}</h1> */}
@@ -25,7 +34,7 @@ const BagDetails = () => {
                 <div className="  col-span-1 lg:col-span-2 mx-auto">
                     <div className="  gap-2">
                         {
-                            <ImageCard images={bag?.images} />
+                            <ImageCard images={bag?.images} selectedImage={selectedImage} setSelectedImage={setSelectedImage} />
                         }
                     </div>
                 </div>
@@ -58,7 +67,12 @@ const BagDetails = () => {
                             <div className="grid grid-cols-1 gap-2">
                                 {
                                     relatedBags?.map((bag: any) => (
-                                        <NavLink to={`/bag/${bag._id}`} key={bag._id} className="grid grid-cols-4 justify-between items-center bg-white shadow-xl hover:rounded-lg hover:shadow-2xl p-4 hover:border-2 hover:border-primary ">
+                                        <NavLink
+                                            to={`/bag/${bag._id}`}
+                                            key={bag._id}
+                                            className="grid grid-cols-4 justify-between items-center bg-white shadow-xl hover:rounded-lg hover:shadow-2xl p-4 hover:border-2 hover:border-primary"
+                                            onClick={() => setSelectedImage(bag?.image)}
+                                        >
                                             <div className="col-span-1">
                                                 <img src={bag?.images[0]}
                                                     className=" h-20 w-16 mx-auto bg-gray-500" alt="" />
