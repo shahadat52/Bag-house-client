@@ -42,7 +42,7 @@ const BagDetails = () => {
 
                 <div className="my-8 mx-2">
                     <h1 className="text-4xl font-bold">* {bag?.name}</h1>
-                    <p className="text-red-500 mt-5 font-semibold text-xl"> মূল্য  <span className="text-red-600 font-bold text-4xl">{bag?.price - (bag?.price * 0.10)}</span> tk</p>
+                    <p className="text-red-500 mt-5 font-semibold text-xl"> মূল্য  <span className="text-red-600 font-bold text-4xl">{(bag?.price - (bag?.price * 0.10)).toFixed()}</span> tk</p>
                     <p className="mt-2 text-justify text-[14px]">
                         ✅ আমাদের ঝুড়িব্যাগ গুলো প্লাস্টিকের বেতের তৈরি তাই টেকসই ও মজবুত হয়।<br />
                         ✅ যেকোন ধরনের হালকা ও ভারি মালামাল ক্যারি করতে পারবেন। <br />
@@ -82,7 +82,7 @@ const BagDetails = () => {
                                                 <div className="flex justify-between">
 
                                                     <p className="">{bag?.size}</p>
-                                                    <p className="font-semibold text-green-500">{bag?.price - (bag?.price * 0.10)} tk</p>
+                                                    <p className="font-semibold text-green-500">{(bag?.price - (bag?.price * 0.10)).toFixed()} tk</p>
                                                 </div>
                                             </div>
                                         </NavLink>

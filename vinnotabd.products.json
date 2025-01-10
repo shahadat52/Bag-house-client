@@ -1,14 +1,39 @@
 [
   {
     "_id": {
+      "$oid": "677805fbcf0f56d2eaf142b9"
+    },
+    "name": "প্লাস্টিক বেতের ঝুড়ি ব্যাগ",
+    "images": [
+      "https://i.ibb.co/vs3H1mX/juri-3.png",
+      "https://i.ibb.co/jMxGbDs/juri-6.png",
+      "https://i.ibb.co.com/zfmmqzc/juri-4.png",
+      "https://i.ibb.co/xsJH8Qn/Juri-bag.png",
+      "https://i.ibb.co/MGg0tkk/juri-2.png",
+      "https://i.ibb.co.com/TWzLp48/juri-6.png",
+      "https://i.ibb.co/KNW7KdY/juri-8.png",
+      "https://i.ibb.co/xKvxW02/juri-9.png",
+      "https://i.ibb.co/WsTr0jM/juri-10.png"
+    ],
+    "zoomImg": "https://i.ibb.co/xsJH8Qn/Juri-bag.png",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 700,
+    "size": "দৈর্ঘ্য ১৫\" প্রস্থ ১৫\"",
+    "category": "bag",
+    "subCategory": "প্লাস্টিকের বেতের ব্যাগ",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
       "$oid": "676fd0de131872623b4539a7"
     },
-    "name": "হ্যান্ড ব্যাগ ১৪ ইঞ্চি",
+    "name": "প্লাস্টিক বেতের হ্যান্ড ব্যাগ",
     "images": [
       "https://i.ibb.co/w4ZXQ2z/1.png",
-      "https://i.ibb.co.com/Ld4GG14/14-14-1.png",
       "https://i.ibb.co.com/crGz5D0/14-14-2.png",
       "https://i.ibb.co.com/tXy5hW7/14-14-3.png",
+      "https://i.ibb.co.com/Ld4GG14/14-14-1.png",
       "https://i.ibb.co.com/R3PNFg9/14-14-4.png",
       "https://i.ibb.co.com/y84x5VJ/14-14-5.png",
       "https://i.ibb.co.com/j6VNCxn/14-14-6.png",
@@ -18,9 +43,9 @@
     ],
     "zoomImg": "https://i.ibb.co/w4ZXQ2z/1.png",
     "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
-    "price": 540,
+    "price": 550,
     "offerPrice": 490,
-    "size": "দৈর্ঘ্য ১৪ প্রস্থ ১৪",
+    "size": "দৈর্ঘ্য ১৪\" প্রস্থ ১৪\"",
     "category": "bag",
     "subCategory": "প্লাস্টিকের বেতের ব্যাগ",
     "ratings": 4.5,
@@ -28,26 +53,232 @@
   },
   {
     "_id": {
-      "$oid": "677805fbcf0f56d2eaf142b9"
+      "$oid": "6780bbd4d9c6f2f94186ec21"
     },
-    "name": "ঝুড়ি ব্যাগ",
+    "name": "প্লাস্টিক বেতের টিফিন ব্যাগ",
     "images": [
-      "https://i.ibb.co/xsJH8Qn/Juri-bag.png",
-      "https://i.ibb.co/C1HN7f9/juri-1.png",
-      "https://i.ibb.co/MGg0tkk/juri-2.png",
-      "https://i.ibb.co/vs3H1mX/juri-3.png",
-      "https://i.ibb.co/J7tZgXQ/juri-4.png",
-      "https://i.ibb.co/jMxGbDs/juri-6.png",
-      "https://i.ibb.co/KNW7KdY/juri-8.png",
-      "https://i.ibb.co/xKvxW02/juri-9.png",
-      "https://i.ibb.co/WsTr0jM/juri-10.png"
+      "https://i.ibb.co/nB0r6Vr/10-10-1.png",
+      "https://i.ibb.co/XsfkKRt/10-10-2.png",
+      "https://i.ibb.co/Q9PTBst/10-10-3.png",
+      "https://i.ibb.co/HVp0gf5/10-10-5.png",
+      "https://i.ibb.co/w4gRKMv/10-10-4.png",
+      "https://i.ibb.co/pySwNBL/10-10-6.png",
+      "https://i.ibb.co/68WNw88/10-10-7.png",
+      "https://i.ibb.co/Bwvd9zz/10-10-8.png"
     ],
-    "zoomImg": "https://i.ibb.co/xsJH8Qn/Juri-bag.png",
+    "zoomImg": "https://i.ibb.co/nB0r6Vr/10-10-1.png",
     "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
-    "price": 700,
-    "size": "দৈর্ঘ্য ১৫ প্রস্থ ১৫",
+    "price": 310,
+    "size": "দৈর্ঘ্য ১০ প্রস্থ ১০",
     "category": "bag",
     "subCategory": "প্লাস্টিকের বেতের ব্যাগ",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67813802d9c6f2f94186ec31"
+    },
+    "name": "জিপার হ্যান্ড ব্যাগ",
+    "images": [
+      "https://i.ibb.co/hXQhzRL/h-b-10-13-7.jpg",
+      "https://i.ibb.co/Jq1r3Sq/h-b-10-13-4.jpg",
+      "https://i.ibb.co/W6cRVwp/h-b-10-13-1.jpg",
+      "https://i.ibb.co/6BGxzws/h-b-10-13-6.jpg",
+      "https://i.ibb.co/pZGfG2Z/h-b-10-13-2.jpg",
+      "https://i.ibb.co/nBKdjvX/h-b-10-13-3.jpg",
+      "https://i.ibb.co/NWxMJtn/h-b-10-13-5.jpg",
+      "https://i.ibb.co/rmG2HSh/h-b-10-13-8.jpg"
+    ],
+    "zoomImg": "https://i.ibb.co/W6cRVwp/h-b-10-13-1.jpg",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 440,
+    "size": "দৈর্ঘ্য ১০ প্রস্থ ১৩",
+    "category": "bag",
+    "subCategory": "প্লাস্টিক হ্যান্ড ব্যাগ",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6781348dd9c6f2f94186ec2f"
+    },
+    "name": "গুজরাটি হ্যান্ড ব্যাগ",
+    "images": [
+      "https://i.ibb.co/ZV8R4Xw/gujrati-3.jpg,",
+      "https://i.ibb.co/0YwYN6N/gujrati-1.jpg",
+      "https://i.ibb.co/SsjrLtN/gujrati-2.jpg",
+      "https://i.ibb.co/McmmL0g/gujrati-4.jpg"
+    ],
+    "zoomImg": "ttps: //i.ibb.co/0YwYN6N/gujrati-1.jpg",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 400,
+    "size": "দৈর্ঘ্য ১৩ প্রস্থ ১৫",
+    "category": "bag",
+    "subCategory": "হ্যান্ড ব্যাগ",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67813b74d9c6f2f94186ec33"
+    },
+    "name": "পাটের হ্যান্ড ব্যাগ",
+    "images": [
+      "https://i.ibb.co/1s2nY7X/j-h-5.jpg",
+      "https://i.ibb.co/3rPhCdd/j-h-2.jpg",
+      "https://i.ibb.co/fnW0btt/j-h-1.jpg",
+      "https://i.ibb.co/J73HGfF/j-h-3.jpg",
+      "https://i.ibb.co/qxSrHFD/j-h-4.jpg",
+      "https://i.ibb.co/wJ5MqF8/j-h-6.jpg",
+      "https://i.ibb.co/GsdY0Rj/j-h-7.jpg"
+    ],
+    "zoomImg": "https://i.ibb.co/fnW0btt/j-h-1.jpg",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 233,
+    "size": "দৈর্ঘ্য ১৪ প্রস্থ ১৩",
+    "category": "bag",
+    "subCategory": "পাটের হ্যান্ড ব্যাগ",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67813d8cd9c6f2f94186ec3d"
+    },
+    "name": "পাটের টিফিন ব্যাগ",
+    "images": [
+      "https://i.ibb.co/B4NjcYv/J-T-5.jpg",
+      "https://i.ibb.co/nrDwf8g/J-T-2.jpg",
+      "https://i.ibb.co/z6mvKvL/J-T-6.jpg",
+      "https://i.ibb.co/mhJpwjB/J-T-1.jpg",
+      "https://i.ibb.co/dPL0M6V/J-T-3.jpg",
+      "https://i.ibb.co/cwGrvt3/J-T-4.jpg"
+    ],
+    "zoomImg": "https://i.ibb.co/mhJpwjB/J-T-1.jpg",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 200,
+    "size": "দৈর্ঘ্য ১৩ প্রস্থ ১০",
+    "category": "bag",
+    "subCategory": "পাটের টিফিন ব্যাগ",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67811f28d9c6f2f94186ec27"
+    },
+    "name": "পিনন হাদি হ্যান্ড ব্যাগ",
+    "images": [
+      "https://i.ibb.co/487WFgN/dhol-1.jpg",
+      "https://i.ibb.co/DLvnvfN/dhol-2.jpg",
+      "https://i.ibb.co/F4h7fcJ/dhol-3.jpg",
+      "https://i.ibb.co/yyHFPXS/dhol-4.jpg",
+      "https://i.ibb.co/TtQ5gpV/dhol-5.jpg"
+    ],
+    "zoomImg": "https://i.ibb.co/487WFgN/dhol-1.jpg",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 250,
+    "size": "দৈর্ঘ্য ৯\" প্রস্থ ১২\"",
+    "category": "bag",
+    "subCategory": "পিনন হাদি হ্যান্ড ব্যাগ",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6781212dd9c6f2f94186ec29"
+    },
+    "name": "সুর্য ব্যাগ",
+    "images": [
+      "https://i.ibb.co/kyX82cV/mobile-10.jpg",
+      "https://i.ibb.co/gRzxHdB/mobile-9.jpg",
+      "https://i.ibb.co/mCz3fgn/mobile-2.jpg",
+      "https://i.ibb.co/WPm50Yg/mobile-3.jpg",
+      "https://i.ibb.co/ySvLHLF/mobile-4.jpg",
+      "https://i.ibb.co/hH90M8S/mobile-5.jpg",
+      "https://i.ibb.co/J7Q2PxQ/mobile-6.jpg",
+      "https://i.ibb.co/YRdbTHB/mobile-7.jpg",
+      "https://i.ibb.co/bvJD18Y/mobile-8.jpg",
+      "https://i.ibb.co/MN3KxvT/mobile-1.jpg"
+    ],
+    "zoomImg": "https://i.ibb.co/MN3KxvT/mobile-1.jpg",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 233,
+    "size": "দৈর্ঘ্য ৯\" প্রস্থ ৮\"",
+    "category": "bag",
+    "subCategory": "পার্স",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "67811580d9c6f2f94186ec25"
+    },
+    "name": "পিনন হাদি পার্স",
+    "images": [
+      "https://i.ibb.co/wpjLf3X/pinon-7.jpg",
+      "https://i.ibb.co/vk2Jc6S/pinon-1.jpg",
+      "https://i.ibb.co/yYmmwNf/pinon-2.jpg",
+      "https://i.ibb.co/fksFBgT/pinon-3.jpg",
+      "https://i.ibb.co/4mRFtCb/pinon-4.jpg",
+      "https://i.ibb.co/ynTjjQb/pinon-5.jpg",
+      "https://i.ibb.co/YyT13YT/pinon-6.jpg",
+      "https://i.ibb.co/ZmTr08v/pinon-8.jpg",
+      "https://i.ibb.co/Pz7fvq1/pinon-9.jpg",
+      "https://i.ibb.co/6FVJfy2/pinon-10.jpg"
+    ],
+    "zoomImg": "https://i.ibb.co/VB7h1Gc/g-p-1.jpg",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 150,
+    "size": "দৈর্ঘ্য ৯ প্রস্থ ৪",
+    "category": "bag",
+    "subCategory": "পার্স",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "678130a4d9c6f2f94186ec2b"
+    },
+    "name": "পুতি পার্স",
+    "images": [
+      "https://i.ibb.co/Jd0w5mc/puti-p-4.jpg",
+      "https://i.ibb.co/2nzH1km/puti-p-1.jpg",
+      "https://i.ibb.co/pbD6B5C/puti-p-2.jpg",
+      "https://i.ibb.co/xmDw8v7/puti-p-3.jpg",
+      "https://i.ibb.co/R3mmWcr/puti-p-5.jpg",
+      "https://i.ibb.co/5jbJL9r/puti-p-6.jpg",
+      "https://i.ibb.co/pJQDH3H/puti-p-7.jpg"
+    ],
+    "zoomImg": "https://i.ibb.co/2nzH1km/puti-p-1.jpg",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 444,
+    "size": "দৈর্ঘ্য ৯ প্রস্থ ৪",
+    "category": "bag",
+    "subCategory": "পার্স",
+    "ratings": 4.5,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6780c55dd9c6f2f94186ec23"
+    },
+    "name": "গুজরাটি পার্স",
+    "images": [
+      "https://i.ibb.co/72rWQcX/g-p-3.jpg",
+      "https://i.ibb.co/VB7h1Gc/g-p-1.jpg",
+      "https://i.ibb.co/pZBzSGd/g-p-2.jpg",
+      "https://i.ibb.co/hHTfz3W/g-p-4.jpg",
+      "https://i.ibb.co/fXV8JDd/g-p-5.jpg",
+      "https://i.ibb.co/BT5rjT1/g-p-6.jpg"
+    ],
+    "zoomImg": "https://i.ibb.co/VB7h1Gc/g-p-1.jpg",
+    "description": "A comfortable and stylish classic t-shirt made from 100% cotton.",
+    "price": 250,
+    "size": "দৈর্ঘ্য ৯ প্রস্থ ৪",
+    "category": "bag",
+    "subCategory": "পার্স",
     "ratings": 4.5,
     "__v": 0
   }

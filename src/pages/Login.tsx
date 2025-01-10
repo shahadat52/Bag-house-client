@@ -1,8 +1,9 @@
+import { NavLink } from "react-router";
 
 const Login = () => {
     return (
         <div>
-            <h1>Please login</h1>
+            <NavLink to='/register'>Please Register</NavLink>
         </div>
     );
 };

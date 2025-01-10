@@ -1,8 +1,9 @@
+import ComingSoon from "../../components/ComingSoon";
 
 const Cart = () => {
     return (
         <div>
-            <h1>Cart page</h1>
+            <ComingSoon />
         </div>
     );
 };

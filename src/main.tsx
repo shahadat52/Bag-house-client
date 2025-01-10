@@ -18,6 +18,7 @@ import { Provider } from 'react-redux'
 import { persistor, store } from './redux/store.ts'
 import { PersistGate } from 'redux-persist/integration/react'
 import OrdersPage from './pages/order/OrdersPage.tsx'
+import Register from './pages/Register.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -38,6 +39,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="*" element={<NotFound />} />
           </Route>
           <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
           <Route path="/dashboard/orders" element={<OrdersPage />} />
         </Routes>
       </BrowserRouter>

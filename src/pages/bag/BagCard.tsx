@@ -18,7 +18,7 @@ const BagCard = ({ bag }: any) => {
             <p className="text-primary flex justify-center">
                 <FaStar />    <FaStar />   <FaStar />   <FaStar />
             </p>
-            <p className="text-lg font-medium text-center ">Price: <span className="line-through text-red-400">{bag?.price} </span> <span className="text-green-600 mx-2">{bag?.price - (bag?.price * 0.10)} tk</span></p>
+            <p className="text-lg font-medium text-center ">Price: <span className="line-through text-red-400">{bag?.price} </span> <span className="text-green-600 mx-2">{(bag?.price - (bag?.price * 0.10)).toFixed()} tk</span></p>
             <p className="text-lg font-medium text-center "></p>
             <div>
                 <h2 className='mx-auto w-1/2 p-3 border-2 border-primary rounded-sm text-center uppercase hover:bg-primary hover:rounded-lg'>Buy Now</h2>

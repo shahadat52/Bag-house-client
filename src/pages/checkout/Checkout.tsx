@@ -56,7 +56,7 @@ const Checkout = () => {
 
     const offerPrice = bag?.price - (bag?.price * 0.10)
 
-    const total = ((offerPrice * Number(quantity)) + (deliveryCharge ?? 0)).toFixed(1);
+    const total = ((offerPrice * Number(quantity)) + (deliveryCharge ?? 0)).toFixed();
 
 
     const onSubmit: SubmitHandler<IFormInput> = async (data) => {
@@ -99,11 +99,11 @@ const Checkout = () => {
                         <img src={image} alt="" className="h-[80px]" />
                         <h3 className="font-semibold">{bag?.name}</h3>
                         <h3>Size: {bag?.size}</h3>
-                        <h3 className="font-bold" >{(offerPrice ?? 0).toFixed(1)}tk</h3>
+                        <h3 className="font-bold" >{(offerPrice ?? 0).toFixed()}tk</h3>
                     </div>
                     <div className="mx-4 mt-4 font-bold ">
                         <div className="flex justify-between mb-5 ">
-                            <h5 className="font-semibold">মোট</h5>  <h5 className="font-bold">{(offerPrice * quantity).toFixed(1)} tk</h5>
+                            <h5 className="font-semibold">মোট</h5>  <h5 className="font-bold">{(offerPrice * quantity).toFixed()} tk</h5>
                         </div>
                         <div className="flex flex-col items-start gap-4 p-4">
                             <div className="mt-1">

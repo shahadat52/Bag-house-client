@@ -1,8 +1,9 @@
+import ComingSoon from "../../components/ComingSoon";
 
 const Food = () => {
     return (
         <div>
-            <h1>This is food page</h1>
+            <ComingSoon />
         </div>
     );
 };
