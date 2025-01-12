@@ -22,8 +22,6 @@ const Register = () => {
                 onSubmit={handleSubmit(onSubmit)}
                 className="grid grid-cols-1 gap-2"
             >
-
-
                 <input
                     {...register("phone", {
                         required: "Phone number is required",

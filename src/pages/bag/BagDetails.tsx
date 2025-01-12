@@ -21,6 +21,8 @@ const BagDetails = () => {
             setSelectedImage(bag.images[0]);
         }
     }, [bag]);
+    const detailsArray = bag?.description.split(",");
+    console.log({ detailsArray });
 
     if (isLoading) {
         return <Skeleton />
@@ -43,14 +45,12 @@ const BagDetails = () => {
                 <div className="my-8 mx-2">
                     <h1 className="text-4xl font-bold">* {bag?.name}</h1>
                     <p className="text-red-500 mt-5 font-semibold text-xl"> মূল্য  <span className="text-red-600 font-bold text-4xl">{(bag?.price - (bag?.price * 0.10)).toFixed()}</span> tk</p>
-                    <p className="mt-2 text-justify text-[14px]">
-                        ✅ আমাদের ঝুড়িব্যাগ গুলো প্লাস্টিকের বেতের তৈরি তাই টেকসই ও মজবুত হয়।<br />
-                        ✅ যেকোন ধরনের হালকা ও ভারি মালামাল ক্যারি করতে পারবেন। <br />
-                        ✅ ওয়াশেবল ও কালার গ্যারান্টি। <br />
-                        ✅ আমাদের আছে কালারের ভিন্নতা। <br />
-                        ✅ আপনার পছন্দের রুচিশীল মানসম্মত পন্যের নিশ্চয়তা।
-
-                    </p>
+                    {
+                        detailsArray?.map((detail: string, index: number) =>
+                            <p key={index} className="mt-2 text-justify text-[14px]">
+                                ✅ {detail}।
+                            </p>)
+                    }
                     <p className="text-xl font-medium mt-3 mb-10">
                         * Size: {bag?.size}
                     </p>
