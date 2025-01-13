@@ -19,10 +19,12 @@ import { persistor, store } from './redux/store.ts'
 import { PersistGate } from 'redux-persist/integration/react'
 import OrdersPage from './pages/order/OrdersPage.tsx'
 import Register from './pages/Register.tsx'
+import { ToastContainer } from 'react-toastify'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
+      <ToastContainer />
       <PersistGate loading={null} persistor={persistor}></PersistGate>
       <BrowserRouter>
         <Routes>

@@ -1,7 +1,11 @@
 import { NavLink } from "react-router";
 import { FaShoppingCart } from "react-icons/fa";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { logOut } from "../redux/features/auth/authSlice";
 
 const Navbar = () => {
+    const dispatch = useAppDispatch()
+    const { token, user } = useAppSelector((state) => state.auth)
     const navItems = [
         <li key="home" className="mr-8 text-lg">
             <NavLink to={`/`}>হোম</NavLink>
@@ -25,6 +29,10 @@ const Navbar = () => {
             <NavLink to={`/about`}>রিভিউ</NavLink>
         </li>,
     ];
+
+    const handleLogOut = () => {
+        dispatch(logOut())
+    }
     return (
         <div className="">
             <div className="navbar bg-gray-300">
@@ -62,7 +70,10 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <span className="mr-8"><NavLink to={`/cart`} className="text-4xl"><FaShoppingCart /></NavLink></span>
-                    <NavLink to={`/login`} className="btn">Login</NavLink>
+
+                    {
+                        token && user ? <button className="btn" onClick={handleLogOut}>Logout</button> : <NavLink to={`/login`} className="btn">Login</NavLink>
+                    }
                 </div>
             </div>
         </div>
