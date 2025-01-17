@@ -20,6 +20,8 @@ import { PersistGate } from 'redux-persist/integration/react'
 import OrdersPage from './pages/order/OrdersPage.tsx'
 import Register from './pages/Register.tsx'
 import { ToastContainer } from 'react-toastify'
+import DashboardLayout from './layouts/DashboardLayout.tsx'
+import ProductManagementPage from './pages/product/ProductManagementPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -39,6 +41,10 @@ createRoot(document.getElementById('root')!).render(
             <Route path="about" element={<About />} />
             <Route path="/checkout/:id" element={<Checkout />} />
             <Route path="*" element={<NotFound />} />
+          </Route>
+          <Route path="dashboard" element={<DashboardLayout />} >
+            <Route path="/dashboard/orders" element={<OrdersPage />} />
+            <Route path="/dashboard/products" element={<ProductManagementPage />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />

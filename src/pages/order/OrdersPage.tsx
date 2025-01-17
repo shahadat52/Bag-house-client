@@ -30,6 +30,7 @@ const OrdersPage = () => {
                             <th>image</th>
                             <th>quantity</th>
                             <th>price</th>
+                            <th>Status</th>
 
                         </tr>
                     </thead>

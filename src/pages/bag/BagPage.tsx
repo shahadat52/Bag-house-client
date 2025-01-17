@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Skeleton from "../../components/Skeleton";
+import DashboardLayout from "../../layouts/DashboardLayout";
 import { useGetProductsQuery } from "../../redux/features/products/productsApi";
 import BagCard from "./BagCard";
 import { Helmet } from "react-helmet";
 
 const Bag = () => {
     const { data: bags, isLoading } = useGetProductsQuery(undefined);
-    console.log(bags?.data);
     if (isLoading) {
         return <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {
@@ -25,6 +25,7 @@ const Bag = () => {
                     bags?.data?.map((bag: any) => <BagCard key={bag._id} bag={bag} />)
                 }
             </div>
+            <DashboardLayout />
         </div>
     );
 };

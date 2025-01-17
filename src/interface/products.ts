@@ -1,11 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type TProduct = {
-    _id: string;
+    _id?: string;
     name: string;
-    img: string;
+    image?: any;
     category: string;
+    zoomImg: string;
     subCategory: string;
     description: string;
     price: number;
+    quantity: number;
     size: string
     ratings: number;
+    status: string;
 }

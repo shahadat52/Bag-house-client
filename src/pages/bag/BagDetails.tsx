@@ -22,7 +22,6 @@ const BagDetails = () => {
         }
     }, [bag]);
     const detailsArray = bag?.description.split(",");
-    console.log({ detailsArray });
 
     if (isLoading) {
         return <Skeleton />

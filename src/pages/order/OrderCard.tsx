@@ -20,6 +20,7 @@ const OrderCard = ({ order, index }: OrderCardProps & { index: number }) => {
             <td> <img src={order.image} className="h-12 w-10" alt="" /></td>
             <td> {order.quantity}</td>
             <td> {order.totalAmount}</td>
+            <td> {order.status}</td>
         </tr>
 
 
