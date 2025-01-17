@@ -42,13 +42,17 @@ createRoot(document.getElementById('root')!).render(
             <Route path="/checkout/:id" element={<Checkout />} />
             <Route path="*" element={<NotFound />} />
           </Route>
+          {/* Dashboard layout */}
           <Route path="dashboard" element={<DashboardLayout />} >
             <Route path="/dashboard/orders" element={<OrdersPage />} />
             <Route path="/dashboard/products" element={<ProductManagementPage />} />
           </Route>
+
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
-          <Route path="/dashboard/orders" element={<OrdersPage />} />
+        </Routes>
+        <Routes>
+
         </Routes>
       </BrowserRouter>
     </Provider>

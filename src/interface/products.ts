@@ -3,6 +3,7 @@ export type TProduct = {
     _id?: string;
     name: string;
     image?: any;
+    images?: any;
     category: string;
     zoomImg: string;
     subCategory: string;

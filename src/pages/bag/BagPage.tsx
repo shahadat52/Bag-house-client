@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Skeleton from "../../components/Skeleton";
-import DashboardLayout from "../../layouts/DashboardLayout";
 import { useGetProductsQuery } from "../../redux/features/products/productsApi";
 import BagCard from "./BagCard";
 import { Helmet } from "react-helmet";
@@ -25,7 +24,7 @@ const Bag = () => {
                     bags?.data?.map((bag: any) => <BagCard key={bag._id} bag={bag} />)
                 }
             </div>
-            <DashboardLayout />
+
         </div>
     );
 };
