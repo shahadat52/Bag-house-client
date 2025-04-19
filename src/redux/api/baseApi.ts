@@ -7,7 +7,8 @@ export const baseApi = createApi({
         // http://localhost:5000/api/user
         baseUrl: `${import.meta.env.VITE_LOCAL_URL}`,
         prepareHeaders: (headers, { getState }) => {
-            const token = (getState() as RootState).auth.token;
+            const token = (getState() as RootState).auth?.auth.token;
+            console.log("token", token);
 
             // If we have a token set in state, let's assume that we should be passing it.
             if (token) {

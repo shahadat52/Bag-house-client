@@ -24,6 +24,7 @@ const OrdersPage = () => {
                         <tr className="bg-gray-200 uppercase text-sm leading-normal">
                             <th>No</th>
                             <th>Customer Name</th>
+                            <th>District & Sub-D</th>
                             <th>Address</th>
                             <th>phone</th>
                             <th>Product</th>

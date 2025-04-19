@@ -1,13 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NavLink } from "react-router";
-import { FaShoppingCart } from "react-icons/fa";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { logOut } from "../redux/features/auth/authSlice";
 import { TAuth } from "../interface/auth";
+import Lottie from "lottie-react";
+import animationData from "../assets/Animation - 1744966805264.json"
 
 const Navbar = () => {
     const dispatch = useAppDispatch()
-    const { token, user } = useAppSelector((state: TAuth) => state.auth)
+    const { token, user } = useAppSelector((state: TAuth) => state?.auth?.auth);
+    const cartItems = useAppSelector((state: TAuth) => state?.auth?.cart);
+    console.log();
     const navItems = [
         <li key="home" className="mr-8 text-lg">
             <NavLink to={`/`}>HOME</NavLink>
@@ -15,29 +18,28 @@ const Navbar = () => {
         <li key="bag" className="mr-8 text-lg">
             <NavLink to={`/bag`}>BAG</NavLink>
         </li>,
+        <li key="food" className="mr-8 text-lg">
+            <NavLink to={`/food`}>FOOD</NavLink>
+        </li>,
         <li key="fashion" className="mr-8 text-lg">
             <NavLink to={`/fashion`}>FASHION</NavLink>
         </li>,
         <li key="agro" className="mr-8 text-lg">
             <NavLink to={`/agro`}>AGRO</NavLink>
         </li>,
-        <li key="food" className="mr-8 text-lg">
-            <NavLink to={`/food`}>FOOD</NavLink>
-        </li>,
+
         <li key="review" className="mr-8 text-lg">
             <NavLink to={`/about`}>REVIEW</NavLink>
         </li>,
 
     ];
 
-    console.log(user);
-
     const handleLogOut = () => {
         dispatch(logOut())
     }
     return (
         <div className="">
-            <div className="navbar bg-gray-300">
+            <div className="navbar bg-[#f3dc2a]">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -56,10 +58,11 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-1 w-52 p-2 shadow">
                             {navItems}
                             {
-                                token && user?.role === 'admin' || user?.role === 'superAdmin' && <li key="about" className="mr-8 text-lg">
+                                token && (user?.role === 'admin' || user?.role === 'superAdmin') &&
+                                <li key="Dashboard" className="mr-8 text-lg">
                                     <NavLink to={`/dashboard`}>DASHBOARD</NavLink>
                                 </li>
                             }
@@ -74,14 +77,28 @@ const Navbar = () => {
                     <ul className="mx-5 w-full menu menu-horizontal px-1 font-semibold ">
                         {navItems}
                         {
-                            token && user?.role === 'admin' || user?.role === 'superAdmin' && <li key="about" className="mr-8 text-lg">
+                            token && (user?.role === 'admin' || user?.role === 'superAdmin') &&
+                            <li key="Dashboard" className="mr-8 text-lg">
                                 <NavLink to={`/dashboard`}>DASHBOARD</NavLink>
                             </li>
+
                         }
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <span className="mr-8"><NavLink to={`/cart`} className="text-4xl"><FaShoppingCart /></NavLink></span>
+                    <div className="flex mr-8 mt-auto">
+                        <NavLink to={`/cart`} className="text-4xl">
+
+                            <div className="w-10 h-10">
+                                <Lottie animationData={animationData} loop={true} />
+                            </div>
+
+                        </NavLink>
+                        <p className="my-auto px-3 py-1 text-xl mt-[-15px] ml-[-5px] rounded-full animate-pulse-green bg-green-800 text-white">
+                            {cartItems.items.length}
+                        </p>
+
+                    </div>
 
                     {
                         token && user ? <button className="btn" onClick={handleLogOut}>Logout</button> : <NavLink to={`/login`} className="btn">Login</NavLink>

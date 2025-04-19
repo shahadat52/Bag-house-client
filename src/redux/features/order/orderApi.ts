@@ -20,8 +20,16 @@ const orderApi = baseApi.injectEndpoints({
             providesTags: ['orders']
         }),
 
+        userOrders: builder.query({
+            query: (phone) => ({
+                url: `/order/${phone}`,
+                method: "GET"
+            }),
+            providesTags: ['orders']
+        }),
+
 
     }),
 });
 
-export const { useOrderPlaceMutation, useGetAllOrdersQuery } = orderApi;
+export const { useOrderPlaceMutation, useGetAllOrdersQuery, useUserOrdersQuery } = orderApi;

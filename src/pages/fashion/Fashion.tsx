@@ -4,6 +4,7 @@ const Fashion = () => {
     return (
         <div>
             <ComingSoon />
+
         </div>
     );
 };

@@ -17,7 +17,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    const token = useAppSelector((state) => state.auth.token)
+    const token = useAppSelector((state) => state?.auth?.auth?.token);
     const dispatch = useAppDispatch()
     // const navigate = useNavigate()
     type Inputs = {
@@ -25,12 +25,7 @@ const Login = () => {
         password: string;
     };
 
-    const { register, handleSubmit, reset, formState: { errors }, } = useForm<Inputs>({
-        defaultValues: {
-            email: "sh@gmail.com",
-            password: 'admin123'
-        }
-    });
+    const { register, handleSubmit, reset, formState: { errors }, } = useForm<Inputs>();
 
     const [login] = useLoginMutation()
 

@@ -31,13 +31,13 @@ const Checkout = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm<IFormInput>();
     const [quantity, setQuantity] = useState(1);
     const [loading, setLoading] = useState(false);
-    // const [deliveryCharge, setDeliveryCharge] = useState(70);
-    const image = useAppSelector(state => state.products.products)
+    const image = useAppSelector(state => state?.auth?.products?.products)
+    const user = useAppSelector(state => state.auth.auth.user)
 
-
+    console.log(user);
     const [orderPlace] = useOrderPlaceMutation();
     const { id } = useParams();;
-
+    console.log(image);
 
     const [deliveryCharge, setDeliveryCharge] = useState<number>(70);
 
@@ -47,7 +47,6 @@ const Checkout = () => {
 
 
     const orderId = generateOrderId();
-    console.log(deliveryCharge);
     const { data, isLoading } = useGetSingleProductQuery(id as string);
     const bag = data?.data;
     if (isLoading) {
@@ -85,6 +84,7 @@ const Checkout = () => {
         }
         if (result.error) {
             setLoading(false);
+            console.log(result.error);
             alert("Order failed")
         }
     }

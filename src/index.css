@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 0;
+  min-height: 4rem /* 64px */;
+  width: 100%;
+}
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

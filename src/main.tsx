@@ -8,7 +8,6 @@ import Checkout from './pages/checkout/Checkout.tsx'
 import MainLayout from './layouts/MainLayout.tsx'
 import About from './pages/About.tsx'
 import Fashion from './pages/fashion/Fashion.tsx'
-import Food from './pages/food/Food.tsx'
 import Agro from './pages/agro/Agro.tsx'
 import Login from './pages/Login.tsx'
 import Cart from './pages/cart/Cart.tsx'
@@ -22,6 +21,9 @@ import Register from './pages/Register.tsx'
 import { ToastContainer } from 'react-toastify'
 import DashboardLayout from './layouts/DashboardLayout.tsx'
 import ProductManagementPage from './pages/product/ProductManagementPage.tsx'
+import PrivateRoute from './Routes/PrivateRoute.tsx'
+import UserOrdersPage from './pages/order/UserOrdersPage.tsx'
+import FoodPage from './pages/food/FoodPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -35,7 +37,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="bag" element={<Bag />} />
             <Route path="/bag/:id" element={<BagDetails />} />
             <Route path="fashion" element={<Fashion />} />
-            <Route path="food" element={<Food />} />
+            <Route path="food" element={<FoodPage />} />
             <Route path="agro" element={<Agro />} />
             <Route path="cart" element={<Cart />} />
             <Route path="about" element={<About />} />
@@ -43,8 +45,10 @@ createRoot(document.getElementById('root')!).render(
             <Route path="*" element={<NotFound />} />
           </Route>
           {/* Dashboard layout */}
-          <Route path="dashboard" element={<DashboardLayout />} >
+          <Route path="dashboard" element={<PrivateRoute />} >
+            <Route index element={<DashboardLayout />} />
             <Route path="/dashboard/orders" element={<OrdersPage />} />
+            <Route path="/dashboard/orders/:id" element={<UserOrdersPage />} />
             <Route path="/dashboard/products" element={<ProductManagementPage />} />
           </Route>
 

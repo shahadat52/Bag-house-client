@@ -9,9 +9,11 @@ export type TOrder = {
     status: 'pending' | 'completed' | 'cancelled';
     totalAmount: number;
     phone: string;
+    createdAt?: string;
     shippingAddress?:
     {
-
+        district: string
+        subDistrict: string
         address: string;
 
     }

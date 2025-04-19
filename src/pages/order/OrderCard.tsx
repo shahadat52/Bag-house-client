@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { NavLink } from "react-router";
 import { TOrder } from "../../interface/order";
 import { TProduct } from "../../interface/products";
 
 type OrderCardProps = {
-    order: TOrder;
+    order: TOrder
 }
 
 
@@ -13,7 +14,8 @@ const OrderCard = ({ order, index }: OrderCardProps & { index: number }) => {
 
         <tr className="border-2 p-5 text-justify">
             <th>{index + 1}</th>
-            <th>{order.customerName}</th>
+            <th><NavLink to={`${order.phone}`} className="uppercase">{order.customerName}</NavLink></th>
+            <td> {order?.shippingAddress?.district}, {order?.shippingAddress?.subDistrict}</td>
             <th>{order?.shippingAddress?.address}</th>
             <td> {order.phone}</td>
             <td> {order.orderProducts.map((product: TProduct) => product.name)}</td>

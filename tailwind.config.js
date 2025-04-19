@@ -4,11 +4,24 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  theme: {
+    extend: {
+      keyframes: {
+        'pulse-green': {
+          '0%, 100%': { backgroundColor: 'rgba(50,35,200,0.5)' },
+          '40%': { backgroundColor: 'rgba(34,197,94,1)' },
+        },
+      },
+      animation: {
+        'pulse-green': 'pulse-green 2s infinite',
+      },
+    },
+  },
   daisyui: {
     themes: [
       {
         mytheme: {
-          primary: "#dfc492",
+          primary: "#f3dc2a",
           secondary: "#19D3AE",
           accent: "#3A4256",
           neutral: "#3D4451",
@@ -20,4 +33,4 @@ export default {
   plugins: [
     require('daisyui'),
   ],
-}
+};
