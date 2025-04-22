@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-const FoodCarousel = () => {
+const Carousel = () => {
     const images = [
         'https://i.ibb.co/KjfL3Hmp/food-banner-1.jpg',
         'https://i.ibb.co/KjfL3Hmp/food-banner-1.jpg',
@@ -58,4 +58,4 @@ const FoodCarousel = () => {
     );
 };
 
-export default FoodCarousel;
+export default Carousel;

@@ -5,8 +5,7 @@ import { TAuth } from "../interface/auth";
 
 
 const PrivateRoute = () => {
-  const user = useAppSelector((state: TAuth) => state.auth.auth?.user);
-  console.log('private', user);
+  const user = useAppSelector((state: TAuth) => state?.auth?.auth?.user);
   return user && (user.role === 'admin' || user.role === 'superAdmin') ? <Outlet /> : <Navigate to="/login" replace />;
 };
 

@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Helmet } from "react-helmet";
-import FoodCarousel from "../../components/FoodCarousel";
 import Skeleton from "../../components/Skeleton";
-import { useGetProductsQuery } from "../../redux/features/products/productsApi";
+import { useGetCategoryWiseProductsQuery } from "../../redux/features/products/productsApi";
+import { TBag } from "../../interface/bag";
+import BagCard from "../bag/BagCard";
+import Carousel from "../../components/Carousel";
 
 const FoodPage = () => {
-    const { isLoading } = useGetProductsQuery(undefined);
+    const { data: foods, isLoading } = useGetCategoryWiseProductsQuery("food");
     if (isLoading) {
         return <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {
@@ -20,15 +22,15 @@ const FoodPage = () => {
             </Helmet>
 
             <div className=" my-2 flex items-center justify-center mx-5">
-                <FoodCarousel />
+                <Carousel />
             </div>
 
 
-            {/* <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5  gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5  gap-5">
                 {
                     foods?.data?.map((bag: TBag) => <BagCard key={bag._id} bag={bag} />)
                 }
-            </div> */}
+            </div>
         </>
 
     );

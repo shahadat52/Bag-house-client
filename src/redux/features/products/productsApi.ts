@@ -20,6 +20,14 @@ const productsApi = baseApi.injectEndpoints({
             providesTags: ["products"]
         }),
 
+        getCategoryWiseProducts: builder.query({
+            query: (category) => ({
+                url: `/products/?category=${category}`,
+                method: "GET",
+            }),
+            providesTags: ["products"]
+        }),
+
         getSingleProduct: builder.query({
             query: (id: string) => ({
                 url: `/products/${id}`,
@@ -39,4 +47,4 @@ const productsApi = baseApi.injectEndpoints({
     }),
 });
 
-export const { useGetProductsQuery, useGetSingleProductQuery, useCreateProductMutation, useDeleteSingleProductMutation } = productsApi;
+export const { useGetProductsQuery, useGetCategoryWiseProductsQuery, useGetSingleProductQuery, useCreateProductMutation, useDeleteSingleProductMutation } = productsApi;

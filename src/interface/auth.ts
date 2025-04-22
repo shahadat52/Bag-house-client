@@ -11,7 +11,7 @@ export type TAuth = {
         },
         cart: {
             items: {
-                id: string;
+                productId: string;
                 name: string;
                 price: number;
                 quantity: number;

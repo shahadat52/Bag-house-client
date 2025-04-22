@@ -10,7 +10,6 @@ import About from './pages/About.tsx'
 import Fashion from './pages/fashion/Fashion.tsx'
 import Agro from './pages/agro/Agro.tsx'
 import Login from './pages/Login.tsx'
-import Cart from './pages/cart/Cart.tsx'
 import BagDetails from './pages/bag/BagDetails.tsx'
 import NotFound from './pages/NotFound.tsx'
 import { Provider } from 'react-redux'
@@ -24,6 +23,8 @@ import ProductManagementPage from './pages/product/ProductManagementPage.tsx'
 import PrivateRoute from './Routes/PrivateRoute.tsx'
 import UserOrdersPage from './pages/order/UserOrdersPage.tsx'
 import FoodPage from './pages/food/FoodPage.tsx'
+import Home from './pages/Home.tsx'
+import CartPage from './pages/cart/CartPage.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -33,13 +34,13 @@ createRoot(document.getElementById('root')!).render(
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            <Route index element={<Bag />} /> {/* Default child route */}
+            <Route index element={<Home />} /> {/* Default child route */}
             <Route path="bag" element={<Bag />} />
             <Route path="/bag/:id" element={<BagDetails />} />
             <Route path="fashion" element={<Fashion />} />
             <Route path="food" element={<FoodPage />} />
             <Route path="agro" element={<Agro />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="cart" element={<CartPage />} />
             <Route path="about" element={<About />} />
             <Route path="/checkout/:id" element={<Checkout />} />
             <Route path="*" element={<NotFound />} />

@@ -2,15 +2,13 @@
 import { NavLink } from "react-router";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { logOut } from "../redux/features/auth/authSlice";
-import { TAuth } from "../interface/auth";
 import Lottie from "lottie-react";
 import animationData from "../assets/Animation - 1744966805264.json"
 
 const Navbar = () => {
     const dispatch = useAppDispatch()
-    const { token, user } = useAppSelector((state: TAuth) => state?.auth?.auth);
-    const cartItems = useAppSelector((state: TAuth) => state?.auth?.cart);
-    console.log();
+    const { token, user } = useAppSelector((state: any) => state?.auth?.auth);
+    const cartItems = useAppSelector((state: any) => state?.auth?.cart);
     const navItems = [
         <li key="home" className="mr-8 text-lg">
             <NavLink to={`/`}>HOME</NavLink>
@@ -94,7 +92,7 @@ const Navbar = () => {
                             </div>
 
                         </NavLink>
-                        <p className="my-auto px-3 py-1 text-xl mt-[-15px] ml-[-5px] rounded-full animate-pulse-green bg-green-800 text-white">
+                        <p className="my-auto px-3 py-[2px] text-xl mt-[-15px] ml-[-10px] rounded-full  bg-red-600 text-white">
                             {cartItems.items.length}
                         </p>
 

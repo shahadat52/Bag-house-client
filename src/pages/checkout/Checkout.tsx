@@ -32,12 +32,9 @@ const Checkout = () => {
     const [quantity, setQuantity] = useState(1);
     const [loading, setLoading] = useState(false);
     const image = useAppSelector(state => state?.auth?.products?.products)
-    const user = useAppSelector(state => state.auth.auth.user)
 
-    console.log(user);
     const [orderPlace] = useOrderPlaceMutation();
     const { id } = useParams();;
-    console.log(image);
 
     const [deliveryCharge, setDeliveryCharge] = useState<number>(70);
 
@@ -75,7 +72,6 @@ const Checkout = () => {
             phone: data.phone,
             shippingAddress: shippingAddress
         }
-        console.log(orderData);
         const result = await orderPlace(orderData);
         if (result?.data) {
             reset()
@@ -84,7 +80,6 @@ const Checkout = () => {
         }
         if (result.error) {
             setLoading(false);
-            console.log(result.error);
             alert("Order failed")
         }
     }

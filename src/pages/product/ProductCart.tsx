@@ -13,8 +13,7 @@ const ProductCart = ({ product, index }: OrderCardProps & { index: number }) => 
     const [deleteProduct] = useDeleteSingleProductMutation()
     const handleDelete = async (id: string) => {
         alert("Action Confirmed!");
-        const result = await deleteProduct(id)
-        console.log(result);
+        await deleteProduct(id)
     }
     return (
         <tr className="border-2 p-5 text-justify">

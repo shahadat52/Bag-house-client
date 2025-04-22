@@ -35,7 +35,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <div className="flex justify-center w-full h-10 bg-primary mt-[-15px]"> <p className="text-center font-extralight text-xs my-auto lowercase">©️ VinnotaBD.Com 2024</p></div>
+            <div className="flex text-white justify-center w-full h-10 bg-primary mt-[-15px]"> <p className="text-center font-extralight text-xs my-auto lowercase">©️ VinnotaBD.Com 2024</p></div>
         </>
     );
 };
