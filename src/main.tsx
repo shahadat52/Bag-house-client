@@ -20,11 +20,12 @@ import Register from './pages/Register.tsx'
 import { ToastContainer } from 'react-toastify'
 import DashboardLayout from './layouts/DashboardLayout.tsx'
 import ProductManagementPage from './pages/product/ProductManagementPage.tsx'
-import PrivateRoute from './Routes/PrivateRoute.tsx'
 import UserOrdersPage from './pages/order/UserOrdersPage.tsx'
 import FoodPage from './pages/food/FoodPage.tsx'
 import Home from './pages/Home.tsx'
 import CartPage from './pages/cart/CartPage.tsx'
+import PrivateRoute from './Routes/PrivateRoute.tsx'
+import DashboardHome from './layouts/DashboardHome.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -46,11 +47,11 @@ createRoot(document.getElementById('root')!).render(
             <Route path="*" element={<NotFound />} />
           </Route>
           {/* Dashboard layout */}
-          <Route path="dashboard" element={<PrivateRoute />} >
-            <Route index element={<DashboardLayout />} />
-            <Route path="/dashboard/orders" element={<OrdersPage />} />
-            <Route path="/dashboard/orders/:id" element={<UserOrdersPage />} />
-            <Route path="/dashboard/products" element={<ProductManagementPage />} />
+          <Route path="dashboard" element={<PrivateRoute><DashboardLayout /></PrivateRoute>} >
+            <Route index element={<PrivateRoute><DashboardHome /></PrivateRoute>} />
+            <Route path="orders" element={<OrdersPage />} />
+            <Route path="orders/:id" element={<UserOrdersPage />} />
+            <Route path="products" element={<ProductManagementPage />} />
           </Route>
 
           <Route path="login" element={<Login />} />
@@ -62,5 +63,5 @@ createRoot(document.getElementById('root')!).render(
       </BrowserRouter>
     </Provider>
 
-  </StrictMode>,
+  </StrictMode >,
 )

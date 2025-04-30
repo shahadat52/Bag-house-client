@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+li > a, li > button {
+  @apply transition-all duration-200 hover:bg-gray-200 rounded;
+}
 
 .navbar {
   display: flex;

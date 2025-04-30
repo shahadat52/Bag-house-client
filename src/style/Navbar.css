@@ -1,0 +1,67 @@
+/* Navbar.css */
+
+/* General navbar styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Logo styling */
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-logo img {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.75rem;
+    margin-right: 0.5rem;
+  }
+  
+  /* Nav items */
+  .navbar-links {
+    display: none;
+  }
+  
+  .navbar-links li {
+    margin-right: 1.5rem;
+    font-size: 1.125rem;
+  }
+  
+  /* Cart indicator */
+  .cart-badge {
+    background-color: #dc2626;
+    color: white;
+    font-size: 1.125rem;
+    padding: 0 0.75rem;
+    border-radius: 9999px;
+    margin-left: -1rem;
+  }
+  
+  /* Mobile dropdown */
+  .dropdown-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Mobile menu button */
+  .mobile-menu-button {
+    display: block;
+    font-size: 2rem;
+  }
+  
+  /* Hide menu on large screens */
+  @media (min-width: 1024px) {
+    .navbar-links {
+      display: flex;
+    }
+  
+    .mobile-menu-button,
+    .dropdown {
+      display: none;
+    }
+  }
+  

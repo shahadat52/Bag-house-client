@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Skeleton from "../../components/Skeleton";
-import { useGetProductsQuery } from "../../redux/features/products/productsApi";
+import { useGetCategoryWiseProductsQuery } from "../../redux/features/products/productsApi";
 import BagCard from "./BagCard";
 import { Helmet } from "react-helmet";
 
 const Bag = () => {
-    const { data: bags, isLoading } = useGetProductsQuery(undefined);
+    const { data: bags, isLoading } = useGetCategoryWiseProductsQuery("bag");
     if (isLoading) {
         return <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
             {

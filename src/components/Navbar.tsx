@@ -2,71 +2,65 @@
 import { NavLink } from "react-router";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { logOut } from "../redux/features/auth/authSlice";
-import Lottie from "lottie-react";
-import animationData from "../assets/Animation - 1744966805264.json"
+import { IoMdMenu } from "react-icons/io";
+import { FaCartArrowDown, FaRegUser } from "react-icons/fa";
+import { useLocation } from "react-router";
 
 const Navbar = () => {
+    const location = useLocation();
+    console.log("location", location.pathname.startsWith('/dashboard'));
     const dispatch = useAppDispatch()
+    const sta = useAppSelector((state: any) => state);
+    console.log("state", sta);
     const { token, user } = useAppSelector((state: any) => state?.auth?.auth);
     const cartItems = useAppSelector((state: any) => state?.auth?.cart);
+    console.log("cartItems", cartItems);
     const navItems = [
-        <li key="home" className="mr-8 text-lg">
+        <li key="home" className="mr-8 font-bold ">
             <NavLink to={`/`}>HOME</NavLink>
         </li>,
-        <li key="bag" className="mr-8 text-lg">
+        <li key="bag" className="mr-8 font-bold">
             <NavLink to={`/bag`}>BAG</NavLink>
         </li>,
-        <li key="food" className="mr-8 text-lg">
+        <li key="food" className="mr-8 font-bold">
             <NavLink to={`/food`}>FOOD</NavLink>
         </li>,
-        <li key="fashion" className="mr-8 text-lg">
+        <li key="fashion" className="mr-8 font-bold">
             <NavLink to={`/fashion`}>FASHION</NavLink>
         </li>,
-        <li key="agro" className="mr-8 text-lg">
+        <li key="agro" className="mr-8 font-bold">
             <NavLink to={`/agro`}>AGRO</NavLink>
         </li>,
 
-        <li key="review" className="mr-8 text-lg">
+        <li key="review" className="mr-8 font-bold">
             <NavLink to={`/about`}>REVIEW</NavLink>
         </li>,
 
     ];
-
     const handleLogOut = () => {
         dispatch(logOut())
     }
     return (
         <div className="">
-            <div className="navbar bg-[#f3dc2a]">
+            <div className="navbar bg-primary text-white">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h8m-8 6h16" />
-                            </svg>
+                            <IoMdMenu className="text-4xl" />
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-1 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-gray-700 rounded-box z-[1] mt-1 w-52 p-2 shadow">
                             {navItems}
                             {
                                 token && (user?.role === 'admin' || user?.role === 'superAdmin') &&
-                                <li key="Dashboard" className="mr-8 text-lg">
+                                <li key="Dashboard" className="mr-8 font-bold ">
                                     <NavLink to={`/dashboard`}>DASHBOARD</NavLink>
                                 </li>
                             }
                         </ul>
                     </div>
-                    <a className="flex  items-center text-lg text-">
+                    <a className="hidden md:flex lg:flex  items-center text-lg text-">
                         <img src="/vinnotabd.png" className='w-12 h-12 rounded-xl mx-1 ' alt="Logo" />
                         <span className=" font-semibold"> Vinnotabd </span>
                     </a>
@@ -76,7 +70,7 @@ const Navbar = () => {
                         {navItems}
                         {
                             token && (user?.role === 'admin' || user?.role === 'superAdmin') &&
-                            <li key="Dashboard" className="mr-8 text-lg">
+                            <li key="Dashboard" className="mr-8 font-bold ">
                                 <NavLink to={`/dashboard`}>DASHBOARD</NavLink>
                             </li>
 
@@ -84,37 +78,39 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <div className="flex mr-8 mt-auto">
+                    <div className="flex justify-center items-center mt-auto">
                         <NavLink to={`/cart`} className="text-4xl">
-
-                            <div className="w-10 h-10">
-                                <Lottie animationData={animationData} loop={true} />
-                            </div>
-
+                            <p>
+                                <FaCartArrowDown />
+                            </p>
                         </NavLink>
-                        <p className="my-auto px-3 py-[2px] text-xl mt-[-15px] ml-[-10px] rounded-full  bg-red-600 text-white">
-                            {cartItems.items.length}
+                        <p className="my-auto px-3 mt-[-15px]  text-xl  rounded-[7999px]  bg-red-600 text-white">
+                            {cartItems?.items?.length}
                         </p>
 
                     </div>
+                    <div className="dropdown dropdown-end ">
+                        <div tabIndex={0} role="button" className="btn btn-ghost text-3xl">
+                            <FaRegUser />
+                        </div>
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40">
+                            {token && user ? (
+                                <li>
+                                    <button onClick={handleLogOut}>Logout</button>
+                                </li>
+                            ) : (
+                                <li>
+                                    <NavLink to="/login">Login</NavLink>
+                                </li>
+                            )}
+                        </ul>
+                    </div>
 
-                    {
-                        token && user ? <button className="btn" onClick={handleLogOut}>Logout</button> : <NavLink to={`/login`} className="btn">Login</NavLink>
-                    }
-                    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </label>
+                    {location.pathname.startsWith("/dashboard") && (
+                        <label htmlFor="dashboard-drawer" className="text-4xl drawer-button lg:hidden">
+                            <IoMdMenu />
+                        </label>
+                    )}
 
                 </div>
             </div>
