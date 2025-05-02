@@ -53,12 +53,10 @@ createRoot(document.getElementById('root')!).render(
             <Route path="orders/:id" element={<UserOrdersPage />} />
             <Route path="products" element={<ProductManagementPage />} />
           </Route>
-
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
         </Routes>
         <Routes>
-
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -42,7 +42,7 @@ const Navbar = () => {
     }
     return (
         <div className="">
-            <div className="navbar bg-primary text-white">
+            <div className="navbar bg-secondary text-black">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -50,7 +50,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-gray-700 rounded-box z-[1] mt-1 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-gray-200 rounded-box z-[1] mt-1 w-52 p-2 shadow">
                             {navItems}
                             {
                                 token && (user?.role === 'admin' || user?.role === 'superAdmin') &&
@@ -95,12 +95,12 @@ const Navbar = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40">
                             {token && user ? (
-                                <li>
-                                    <button onClick={handleLogOut}>Logout</button>
+                                <li className="font-bold">
+                                    <button onClick={handleLogOut}>LOGOUT</button>
                                 </li>
                             ) : (
-                                <li>
-                                    <NavLink to="/login">Login</NavLink>
+                                <li className="font-bold">
+                                    <NavLink to="/login">LOGIN</NavLink>
                                 </li>
                             )}
                         </ul>
