@@ -22,15 +22,15 @@ const Navbar = () => {
         <li key="bag" className="mr-8 font-bold">
             <NavLink to={`/bag`}>BAG</NavLink>
         </li>,
-        <li key="food" className="mr-8 font-bold">
-            <NavLink to={`/food`}>FOOD</NavLink>
-        </li>,
-        <li key="fashion" className="mr-8 font-bold">
-            <NavLink to={`/fashion`}>FASHION</NavLink>
-        </li>,
-        <li key="agro" className="mr-8 font-bold">
-            <NavLink to={`/agro`}>AGRO</NavLink>
-        </li>,
+        // <li key="food" className="mr-8 font-bold">
+        //     <NavLink to={`/food`}>FOOD</NavLink>
+        // </li>,
+        // <li key="fashion" className="mr-8 font-bold">
+        //     <NavLink to={`/fashion`}>FASHION</NavLink>
+        // </li>,
+        // <li key="agro" className="mr-8 font-bold">
+        //     <NavLink to={`/agro`}>AGRO</NavLink>
+        // </li>,
 
         <li key="review" className="mr-8 font-bold">
             <NavLink to={`/about`}>REVIEW</NavLink>

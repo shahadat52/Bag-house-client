@@ -4,12 +4,12 @@ import Footer from "../pages/Footer";
 import { FaWhatsappSquare } from "react-icons/fa";
 
 const MainLayout = () => {
-    const phoneNumber = "8801855935377"
+    const phoneNumber = "01817649356"
     const message = "Hello, I would like to our products."
 
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     return (
-        <div className="max-w-[1550px] mx-auto ">
+        <div className="max-w-[1450px] mx-auto ">
             <Navbar />
             <Outlet />
             <div >
