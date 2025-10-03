@@ -81,7 +81,7 @@ export default function BillPage() {
                         Date: {invoiceCompanyInfo.date}
                     </div>
                 </div>
-                <header className="flex  flex-col md:flex-row md:items-center md:justify-between mb-2 ">
+                <header className="flex  flex-col md:flex-row md:items-center md:justify-between  ">
                     <div className="text-left ">
                         <div className="text-2xl font-bold ">Bag House</div>
                         <div className="text-sm text-gray-600 ">
@@ -108,13 +108,13 @@ export default function BillPage() {
                     </section>
 
                 </header>
-
+                <hr className="mb-3" />
             </section>
 
 
             {/* products table */}
             <div className="overflow-x-auto">
-                <table className="w-full table-auto border-collapse">
+                <table className="w-full table-auto border-collapse ">
                     <thead>
                         <tr className="bg-gray-50">
                             <th className="text-left p-2 text-sm text-gray-600">Item</th>
@@ -164,7 +164,7 @@ export default function BillPage() {
             {/* Notes & Signature */}
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <p className="text-[11px] text-gray-600">"Thank you for doing business with Bag house<br /> We value your trust"</p>
+                    <p className="text-[10px] text-gray-600">"Thank you for doing business with Bag house <br /> We value your trust"</p>
 
                 </div>
 
