@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Loading from "../../components/Loading";
 import { useGetAllOrdersQuery } from "../../redux/features/order/orderApi";
+import { NavLink } from "react-router";
 
 type TOrder = {
     _id: string;
@@ -25,29 +26,10 @@ const OrdersPage: React.FC = () => {
     const { data, isLoading } = useGetAllOrdersQuery(undefined);
     const orders: TOrder[] = data?.data || [];
     const [expandedRows, setExpandedRows] = useState<string[]>([]);
-
     const toggleExpand = (orderId: string) => {
         setExpandedRows((prev) =>
             prev.includes(orderId) ? prev.filter((id) => id !== orderId) : [...prev, orderId]
         );
-    };
-
-    const getStatusBadge = (status: TOrder["status"]) => {
-        const baseClass = "badge capitalize px-3 py-1 text-xs font-medium";
-        switch (status) {
-            case "pending":
-                return <span className={`${baseClass} badge-warning`}>Pending</span>;
-            case "confirmed":
-                return <span className={`${baseClass} badge-info`}>Confirmed</span>;
-            case "shipped":
-                return <span className={`${baseClass} badge-primary`}>Shipped</span>;
-            case "delivered":
-                return <span className={`${baseClass} badge-success`}>Delivered</span>;
-            case "canceled":
-                return <span className={`${baseClass} badge-error`}>Canceled</span>;
-            default:
-                return <span className={baseClass}>Unknown</span>;
-        }
     };
 
     if (isLoading) return <Loading />;
@@ -68,7 +50,7 @@ const OrdersPage: React.FC = () => {
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th className="text-right">Total</th>
-                                <th>Status</th>
+                                {/* <th>Status</th> */}
                                 <th>Date</th>
                                 <th className="text-center">Actions</th>
                             </tr>
@@ -84,7 +66,7 @@ const OrdersPage: React.FC = () => {
                                             <td>{order.guestInfo.email}</td>
                                             <td>{order.guestInfo.phone}</td>
                                             <td className="font-bold text-right">${order.totalAmount.toFixed(2)}</td>
-                                            <td>{getStatusBadge(order.status)}</td>
+                                            {/* <td>{getStatusBadge(order.status)}</td> */}
                                             <td>{new Date(order.createdAt).toLocaleDateString()}</td>
                                             <td className="flex justify-center gap-2">
                                                 <button
@@ -93,7 +75,7 @@ const OrdersPage: React.FC = () => {
                                                 >
                                                     {isExpanded ? "Hide" : "View"}
                                                 </button>
-                                                <button className="btn btn-sm btn-outline btn-warning">Edit</button>
+                                                <NavLink to={`${order?._id}`} className="btn btn-sm btn-outline btn-warning">Bill</NavLink>
                                                 <button className="btn btn-sm btn-outline btn-error">Delete</button>
                                             </td>
                                         </tr>

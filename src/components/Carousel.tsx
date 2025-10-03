@@ -30,30 +30,32 @@ const Carousel = () => {
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
         >
-            <div className="sm:hidden hidden lg:block">
-                <div
-                    className=" flex transition-transform duration-700 ease-in-out"
-                    style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-                >
-                    {images.map((img, index) => (
-                        <img
-                            key={index}
-                            src={img}
-                            alt={`Slide ${index}`}
-                            className="w-full flex-shrink-0 ]"
-                        />
-                    ))}
-                </div>
+            <div>
+                <div className="sm:hidden hidden lg:block">
+                    <div
+                        className=" flex transition-transform duration-700 ease-in-out"
+                        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                    >
+                        {images.map((img, index) => (
+                            <img
+                                key={index}
+                                src={img}
+                                alt={`Slide ${index}`}
+                                className="w-full flex-shrink-0 ]"
+                            />
+                        ))}
+                    </div>
 
-                <div className="flex justify-center gap-2 mt-2">
-                    {images.map((_, index) => (
-                        <button
-                            key={index}
-                            onClick={() => setCurrentIndex(index)}
-                            className={`w-3 h-3 mb-2  ${currentIndex === index ? 'bg-blue-500' : 'bg-gray-300'
-                                }`}
-                        ></button>
-                    ))}
+                    <div className="flex justify-center gap-2 mt-2">
+                        {images.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setCurrentIndex(index)}
+                                className={`w-3 h-3 mb-2  ${currentIndex === index ? 'bg-blue-500' : 'bg-gray-300'
+                                    }`}
+                            ></button>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

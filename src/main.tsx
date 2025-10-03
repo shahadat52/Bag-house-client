@@ -20,12 +20,13 @@ import Register from './pages/Register.tsx'
 import { ToastContainer } from 'react-toastify'
 import DashboardLayout from './layouts/DashboardLayout.tsx'
 import ProductManagementPage from './pages/product/ProductManagementPage.tsx'
-import UserOrdersPage from './pages/order/UserOrdersPage.tsx'
 import FoodPage from './pages/food/FoodPage.tsx'
 import Home from './pages/Home.tsx'
 import CartPage from './pages/cart/CartPage.tsx'
 import PrivateRoute from './Routes/PrivateRoute.tsx'
 import DashboardHome from './layouts/DashboardHome.tsx'
+import OrderBill from './pages/order/OrderBill.tsx'
+// import BillPage from './pages/order/Bill.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -50,7 +51,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="dashboard" element={<PrivateRoute><DashboardLayout /></PrivateRoute>} >
             <Route index element={<PrivateRoute><DashboardHome /></PrivateRoute>} />
             <Route path="orders" element={<OrdersPage />} />
-            <Route path="orders/:id" element={<UserOrdersPage />} />
+            <Route path="orders/:id" element={<OrderBill />} />
             <Route path="products" element={<ProductManagementPage />} />
           </Route>
           <Route path="login" element={<Login />} />

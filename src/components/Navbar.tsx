@@ -8,13 +8,9 @@ import { useLocation } from "react-router";
 
 const Navbar = () => {
     const location = useLocation();
-    console.log("location", location.pathname.startsWith('/dashboard'));
     const dispatch = useAppDispatch()
-    const sta = useAppSelector((state: any) => state);
-    console.log("state", sta);
     const { token, user } = useAppSelector((state: any) => state?.auth?.auth);
     const cartItems = useAppSelector((state: any) => state?.auth?.cart);
-    console.log("cartItems", cartItems);
     const navItems = [
         <li key="home" className="mr-8 font-bold ">
             <NavLink to={`/`}>HOME</NavLink>
@@ -41,7 +37,7 @@ const Navbar = () => {
         dispatch(logOut())
     }
     return (
-        <div className="">
+        <div className="no-print">
             <div className="navbar bg-secondary text-black">
                 <div className="navbar-start">
                     <div className="dropdown">

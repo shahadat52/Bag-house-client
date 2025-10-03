@@ -1,0 +1,46 @@
+/* --- Print Styles --- */
+@media print {
+  @page {
+    size: A4 landscape;   /* Landscape mode, so side by side fits better */
+    margin: 10mm;         /* Page margin */
+  }
+
+  body {
+    background: white !important;
+    -webkit-print-color-adjust: exact; /* Ensure background colors print */
+    print-color-adjust: exact;
+  }
+
+  /* Hide buttons, headers, etc. */
+  .print\\:hidden {
+    display: none !important;
+  }
+
+  /* Wrapper of invoices */
+  #invoice-print-area {
+    display: flex;
+    justify-content: space-between;
+    gap: 0; /* remove gap for tight fit */
+    width: 100%;
+  }
+
+  /* Each invoice card */
+  #invoice-print-area > div {
+    width: 48%;   /* Two side by side */
+    page-break-inside: avoid; /* Prevent cutting in middle */
+  }
+
+  /* Text size adjustment for printing */
+  .print-text-10px {
+    font-size: 10px !important;
+  }
+
+  /* Hide shadow/borders that may waste ink */
+  .shadow,
+  .shadow-sm,
+  .shadow-md,
+  .shadow-lg {
+    box-shadow: none !important;
+  }
+}
+
