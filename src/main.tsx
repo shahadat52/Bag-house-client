@@ -26,7 +26,6 @@ import CartPage from './pages/cart/CartPage.tsx'
 import PrivateRoute from './Routes/PrivateRoute.tsx'
 import DashboardHome from './layouts/DashboardHome.tsx'
 import OrderBill from './pages/order/OrderBill.tsx'
-// import BillPage from './pages/order/Bill.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
