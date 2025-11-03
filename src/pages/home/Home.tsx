@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NavLink } from "react-router";
-import Carousel from "../components/Carousel";
-import Skeleton from "../components/Skeleton";
-import { useGetCategoryWiseProductsQuery } from "../redux/features/products/productsApi";
-import BagCard from "./bag/BagCard";
+import Carousel from "../../components/Carousel";
+import Skeleton from "../../components/Skeleton";
+import { useGetCategoryWiseProductsQuery } from "../../redux/features/products/productsApi";
+import BagCard from "../bag/BagCard";
+import JuteBagShowcase from "./JutBagShowcase";
 
 const Home = () => {
     const { data: bags, isLoading } = useGetCategoryWiseProductsQuery("bag");
@@ -16,9 +17,10 @@ const Home = () => {
     }
     return (
         <>
-            <div>
+            <div className="w-full md-w-[600px}">
                 <Carousel />
             </div>
+            <JuteBagShowcase />
             <div>
                 <h1 className="text-4xl font-bold text-center uppercase py-4 my-6">Our bag collections</h1>
                 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3  gap-5">

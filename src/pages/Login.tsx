@@ -67,18 +67,7 @@ const Login = () => {
             toast.update(toastId, { render: `${(error as any)?.data?.message}`, type: "error", isLoading: false, autoClose: 2000 })
             setLoading(false)
         }
-        // if (res?.data) {
-        //     toast.success('User Registered', {
-        //         autoClose: 2000
-        //     })
-        //     reset()
-        //     navigate('/login')
 
-        // }
-        // if (res?.error) {
-        //     toast.error(`${res?.error?.data?.message}`)
-        // }
-        // console.log(res);
     }
 
     return (

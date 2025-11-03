@@ -28,13 +28,14 @@ const AddProductModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
             subCategory: data.subCategory,
             description: data.description,
             price: Number(data.price),
-            quantity: Number(data.quantity),
+            stock: Number(data.stock),
             size: data.size,
             ratings: Number(data.ratings),
             status: data.status,
         };
 
         const result = await addProduct(productData)
+        console.log({ result })
         if (result?.data) {
             setIsLoading(false)
             toast.success("Order placed successfully")
@@ -129,13 +130,13 @@ const AddProductModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
                             {errors.subCategory && <p className="text-sm text-red-500">{errors.subCategory.message}</p>}
                         </div>
                         <div>
-                            <label className="block text-sm font-medium">Quantity</label>
+                            <label className="block text-sm font-medium">Stock</label>
                             <input
                                 type="number"
-                                {...register("quantity", { required: "Stock is required", min: 0 })}
+                                {...register("stock", { required: "Stock is required", min: 0 })}
                                 className="w-full px-3 py-2 border rounded-md focus:ring focus:ring-blue-500 focus:outline-none"
                             />
-                            {errors.quantity && <p className="text-sm text-red-500">{errors.quantity.message}</p>}
+                            {errors.stock && <p className="text-sm text-red-500">{errors.stock.message}</p>}
                         </div>
                         <div>
                             <label className="block text-sm font-medium">Description</label>

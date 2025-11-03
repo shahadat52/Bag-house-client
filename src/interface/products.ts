@@ -9,7 +9,7 @@ export type TProduct = {
     subCategory: string;
     description: string;
     price: number;
-    quantity: number;
+    stock: number;
     size: string
     ratings: number;
     status: string;

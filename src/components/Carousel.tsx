@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 
 const Carousel = () => {
     const images = [
-        'https://i.ibb.co.com/0RrDP8nx/Blue-Orange-Watercolor-Realistic-Product-Facebook-Ad-1100-x-550-px-1100-x-500-px.jpg',
-        'https://i.ibb.co.com/G4Jw2zQ0/banner-10.jpg',
+        'https://i.ibb.co.com/7t1jP6wr/bg-banner.jpg',
 
     ];
 
@@ -30,8 +29,9 @@ const Carousel = () => {
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
         >
+            {/* sm:hidden hidden lg:block */}
             <div>
-                <div className="sm:hidden hidden lg:block">
+                <div className="">
                     <div
                         className=" flex transition-transform duration-700 ease-in-out"
                         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -41,7 +41,8 @@ const Carousel = () => {
                                 key={index}
                                 src={img}
                                 alt={`Slide ${index}`}
-                                className="w-full flex-shrink-0 ]"
+                                className="lg:w-[75%]  sm:w-[90%] md:w-[80%] mx-auto py-2 h-auto max-h-[600px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] overflow-auto object-cover flex-shrink-0"
+
                             />
                         ))}
                     </div>
