@@ -1,63 +1,78 @@
 import { useEffect, useState } from "react";
-
+import { NavLink } from "react-router";
 
 const Carousel = () => {
     const images = [
-        'https://i.ibb.co.com/7t1jP6wr/bg-banner.jpg',
-
+        "https://i.ibb.co.com/twp7kM9V/8.jpg",
+        "https://i.ibb.co.com/sJ3fqCYy/1.jpg",
+        "https://i.ibb.co.com/dJtdsW0S/2.jpg",
+        "https://i.ibb.co.com/1YzLkH8B/3.jpg",
+        "https://i.ibb.co.com/gbNp889S/4.jpg",
+        "https://i.ibb.co.com/5hKq2WSq/5.jpg",
+        "https://i.ibb.co.com/1JsVX9VZ/6.jpg",
+        "https://i.ibb.co.com/609DLQxw/7.jpg",
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [paused, setPaused] = useState(false);
+    const [current, setCurrent] = useState(0);
 
     useEffect(() => {
-        if (paused) return;
-
+        const totalTime = 20000; // 15s total cycle
+        const intervalTime = totalTime / images.length;
         const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) =>
-                prevIndex === images.length - 1 ? 0 : prevIndex + 1
-            );
-        }, 1500);
+            setCurrent((prev) => (prev + 1) % images.length);
+        }, intervalTime);
 
         return () => clearInterval(interval);
-    }, [paused, currentIndex]);
-
+    }, [images.length]);
 
     return (
-        <div
-            className="w-full mx-auto overflow-hidden  shadow-lg"
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
-        >
-            {/* sm:hidden hidden lg:block */}
-            <div>
-                <div className="">
+        <div className="relative w-full overflow-hidden rounded-2xl mt-2">
+            {/* Carousel Container */}
+            <div className="relative w-full h-[220px] xs:h-[280px] sm:h-[380px] md:h-[500px] lg:h-[650px]">
+                {images.map((img, index) => (
                     <div
-                        className=" flex transition-transform duration-700 ease-in-out"
-                        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                        key={index}
+                        className={`absolute inset-0 transition-all duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)] 
+              ${index === current
+                                ? "opacity-100 scale-100 translate-x-0 z-10"
+                                : "opacity-0 scale-105 translate-x-5 z-0"
+                            }`}
                     >
-                        {images.map((img, index) => (
-                            <img
-                                key={index}
-                                src={img}
-                                alt={`Slide ${index}`}
-                                className="lg:w-[75%]  sm:w-[90%] md:w-[80%] mx-auto py-2 h-auto max-h-[600px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] overflow-auto object-cover flex-shrink-0"
+                        <img
+                            src={img}
+                            alt={`Slide ${index}`}
+                            className="w-full h-auto object-cover object-center rounded-2xl"
+                            loading="lazy"
+                        />
 
-                            />
-                        ))}
-                    </div>
+                        {/* Overlay & Button */}
+                        <div className="absolute inset-0 bg-black/10 flex flex-col items-center justify-center px-4 text-center">
 
-                    <div className="flex justify-center gap-2 mt-2">
-                        {images.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setCurrentIndex(index)}
-                                className={`w-3 h-3 mb-2  ${currentIndex === index ? 'bg-blue-500' : 'bg-gray-300'
-                                    }`}
-                            ></button>
-                        ))}
+                            <NavLink
+                                to="/bag"
+                                className="px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm bg-white/50 text-black font-semibold rounded-full shadow-md 
+                           hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300"
+                            >
+                                Shop Now
+                            </NavLink>
+                        </div>
                     </div>
-                </div>
+                ))}
+            </div>
+
+            {/* Dots Navigation */}
+            <div className=" absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-3">
+                {images.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => setCurrent(i)}
+                        className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 
+              ${i === current
+                                ? "bg-black scale-125 shadow-md"
+                                : "bg-gray-400 opacity-70 hover:opacity-100"
+                            }`}
+                    />
+                ))}
             </div>
         </div>
     );

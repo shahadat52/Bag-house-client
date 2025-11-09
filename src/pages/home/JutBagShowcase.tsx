@@ -1,5 +1,5 @@
 
-import banner1 from "../../assets/bg banner.jpg";
+import banner1 from "../../assets/bagShowCase.jpg";
 
 const JuteBagShowcase = () => {
   return (
@@ -18,12 +18,12 @@ const JuteBagShowcase = () => {
           {/* Image Column: Re-orders on desktop */}
           <div className="order-1 md:order-1 flex justify-center">
             {/* Image Container: Uses aspect-ratio or min-height for structure on smaller screens if needed, but 'h-auto' allows the image to define the size naturally. */}
-            <div className=" bg-amber-100 border-2  mx-auto border-green-500 rounded-xl shadow-xl w-[400px] md:w-full  overflow-hidden">
+            <div className=" bg-amber-100 border-2  mx-auto w-[95%] border-green-500 rounded-xl shadow-xl  md:w-full  overflow-hidden">
               {/* Image itself is made fully responsive */}
               <img
                 src={banner1}
                 alt="Jute Bag"
-                className="w-full h-auto object-cover"
+                className="w-full mx-auto h-auto object-cover"
               />
             </div>
           </div>
